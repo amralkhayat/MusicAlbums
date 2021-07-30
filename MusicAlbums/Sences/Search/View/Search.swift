@@ -21,54 +21,51 @@ class Search: UIViewController {
     //MARK:- Properties
     var presenter:SearchVCPresenter?
     let searchController :UISearchController = {
-     let searchController =  UISearchController()
-        searchController.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        searchController.searchBar.searchTextField.leftView?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-    return searchController
+     let searchCont =  UISearchController()
+        searchCont.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        searchCont.searchBar.searchTextField.leftView?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        searchCont.searchBar.placeholder = "Search for your favorite Artist "
+        searchCont.searchBar.returnKeyType = .done
+        searchCont.obscuresBackgroundDuringPresentation = false
+        searchCont.searchBar.enablesReturnKeyAutomatically = false
+        searchCont.obscuresBackgroundDuringPresentation = false
+        searchCont.definesPresentationContext = true
+    return searchCont
     }()
-    
-    
-
     //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configurationUI()
+    }
+    //MARK:- Helper
+    private func configurationUI(){
         navigationItem.searchController =  searchController
         navigationItem.title = "Search"
         SearchRouter.searchRouterVC(view: self)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         presenter?.viewDidLoad()
-        
     }
-    //MARK:- Helper
-
+    
     //MARK:- Selector
-
+}
+//MARK:- Search Methods
+extension Search: UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {return }
+        presenter?.search(artist: text)
+    }
 }
 
-
-
-
-extension Search: UITableViewDataSource,SearchViewProtocol {
-    func showIndecator() {
-        
-    }
-    
-    func hideIndecator() {
-        
-    }
-    
-    func tableviewReload() {
-        
-    }
-    
- 
+//MARK:- Table view delegate and data source methods 
+extension Search: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return presenter?.numberOfRows ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeue() as ArtistCell
+        presenter?.configurationArtistCell(cell: cell, index: indexPath.row)
         return cell
     }
-
-
 }

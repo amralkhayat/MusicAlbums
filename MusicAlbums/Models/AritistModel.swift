@@ -34,7 +34,7 @@ struct Artistmatches: Codable {
 }
 
 // MARK: - Artist
-struct Artist: Codable {
+struct Artist: Codable{
     let name, listeners, mbid: String
     let url: String
     let streamable: String
