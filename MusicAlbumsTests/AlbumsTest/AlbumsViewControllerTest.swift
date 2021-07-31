@@ -25,6 +25,7 @@ class AlbumsViewControllerTest: XCTestCase {
         XCTAssertNotNil(sut)
     }
     
+    
     func test_Albums_WhenCollectionViewLoad_shouldBeNotNill (){
         XCTAssertNotNil(sut.albumsCollectionView)
     }
@@ -42,5 +43,9 @@ class AlbumsViewControllerTest: XCTestCase {
         XCTAssertTrue(sut.responds(to: #selector(sut.collectionView(_:numberOfItemsInSection:))))
         XCTAssertTrue(sut.responds(to: #selector(sut.collectionView(_:cellForItemAt:))))
     }
+    
+    
+    
+    
     
 }

@@ -17,12 +17,33 @@ class Albums: UIViewController {
         }
     }
     //MARK:- Properties
+    let layout:UICollectionViewCompositionalLayout = {
+        let fraction: CGFloat = 1/2
+        let inset: CGFloat = 0.2
+        // item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        // group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(fraction))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize:  groupSize, subitems: [item])
+        // section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+
+        return UICollectionViewCompositionalLayout(section: section)
+    }()
+    
     //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configurationUI()
     }
     //MARK:- Helper
+    
+    private func configurationUI(){
+        albumsCollectionView.collectionViewLayout =  layout
+    }
     //MARK:- Selector
 
 }
@@ -33,11 +54,13 @@ extension Albums: UICollectionViewDelegate{
 
 extension Albums: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        0
+        10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let albumCell = collectionView.dequeue(indexPath: indexPath) as AlbumCell
+        
+        return albumCell
     }
     
     
