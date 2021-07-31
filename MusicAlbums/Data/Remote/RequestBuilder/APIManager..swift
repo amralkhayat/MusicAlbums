@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 protocol APIManagersMethods {
-    typealias CallResponse<T> = ((Result<T, BaseError>) -> Void)
+    typealias CallResponse<T> = ((Result<T?, BaseError>) -> Void)
 
     func performRequest<T>(_ object: T.Type, router: UrlRequestBuilder,
                                   responseHandler:@escaping CallResponse<T> ) where T: Decodable
@@ -29,13 +29,11 @@ protocol APIManagersMethods {
             
         sessionManager.request(router).responseJSON { (response) in
                 // ALAMOFIRE ERROR CHECK
-            print(response.response?.statusCode)
                 if let error = response.error {
                     responseHandler(.failure(BaseError.serverConnection))
                     print("error on request responce : \(error.localizedDescription)")
                     return
                 }
-    
                 switch response.response?.statusCode ?? 0 {
                 case 404...405:
                     responseHandler(.failure(BaseError.invalidRequest))

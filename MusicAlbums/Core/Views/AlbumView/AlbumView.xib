@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlbumView" customModule="MusicAlbums" customModuleProvider="target">
+            <connections>
+                <outlet property="albumArtist" destination="ckZ-aN-Glw" id="ixK-ha-O98"/>
+                <outlet property="albumImage" destination="FQm-rm-cNt" id="hfe-QO-mNU"/>
+                <outlet property="albumName" destination="OdQ-8U-Wjo" id="gYu-Ma-Db2"/>
+                <outlet property="downloadImageAlbum" destination="meY-Vv-cVC" id="o6L-AK-Wxe"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="304" height="330"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FQm-rm-cNt">
+                    <rect key="frame" x="28" y="10" width="250" height="235"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Rb-tO-zUO">
+                    <rect key="frame" x="131" y="253" width="45" height="32"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-8U-Wjo">
+                            <rect key="frame" x="4" y="0.0" width="37.5" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kpr-DJ-wRG">
+                            <rect key="frame" x="0.0" y="22" width="45" height="10"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownloadImage" translatesAutoresizingMaskIntoConstraints="NO" id="meY-Vv-cVC">
+                                    <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="10" id="AyF-6p-50W"/>
+                                        <constraint firstAttribute="width" constant="10" id="x1C-if-AEt"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckZ-aN-Glw">
+                                    <rect key="frame" x="14" y="0.0" width="31" height="10"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="PrimaryColor"/>
+            <constraints>
+                <constraint firstItem="0Rb-tO-zUO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="1.5" id="3Me-6V-y32"/>
+                <constraint firstItem="FQm-rm-cNt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="1" id="Ecd-U6-TOb"/>
+                <constraint firstItem="FQm-rm-cNt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="K1i-lw-63b"/>
+                <constraint firstItem="0Rb-tO-zUO" firstAttribute="top" secondItem="FQm-rm-cNt" secondAttribute="bottom" constant="8" symbolic="YES" id="ZAM-qK-UL1"/>
+                <constraint firstItem="FQm-rm-cNt" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.712121" id="cMp-6B-Q92"/>
+                <constraint firstItem="FQm-rm-cNt" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.822368" id="kWc-Mq-uwp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25" y="-244"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="DownloadImage" width="128" height="128"/>
+        <namedColor name="PrimaryColor">
+            <color red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

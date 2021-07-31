@@ -34,7 +34,7 @@
                 <constraint firstItem="OVe-xN-weg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fcd-TT-7i2"/>
                 <constraint firstAttribute="trailing" secondItem="OVe-xN-weg" secondAttribute="trailing" constant="20" id="jVw-rM-2zw"/>
             </constraints>
-            <point key="canvasLocation" x="-242.0289855072464" y="79.6875"/>
+            <point key="canvasLocation" x="204" y="46"/>
         </view>
     </objects>
     <resources>

@@ -7,28 +7,20 @@
 
 import UIKit
 extension Search: SearchViewProtocol {
- 
-    
-    func showIndecator() {
-        
-    }
-    
-    func hideIndecator() {
-        
-    }
-    
     func tableviewReload() {
-        searchTableView.reloadData()
-        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            self.searchTableView.reloadData()
+        }
     }
     
     func showError(message: String) {
-        
+        self.presentAlert(withTitle: "Error", message: message, actions: ["Ok" : UIAlertAction.Style.default])
     }
     
-    func showPlacehoder(status: Bool) {
+    func showPlacehoder(status: Bool, message: String) {
         let placeholder = CustomPlaceholder()
-         placeholder.placeholderLabel.text = "Search for Artist you Love"
+         placeholder.placeholderLabel.text = message
      
         if status{
             searchTableView.backgroundView =  placeholder

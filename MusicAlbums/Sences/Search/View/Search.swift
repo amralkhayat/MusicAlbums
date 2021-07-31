@@ -16,6 +16,7 @@ class Search: UIViewController {
             searchTableView.tableFooterView =  UIView()
             searchTableView.registerCellNib(cellClass: ArtistCell.self)
             searchTableView.dataSource = self
+            searchTableView.prefetchDataSource = self
         }
     }
     //MARK:- Properties
@@ -24,7 +25,9 @@ class Search: UIViewController {
      let searchCont =  UISearchController()
         searchCont.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         searchCont.searchBar.searchTextField.leftView?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        searchCont.searchBar.placeholder = "Search for your favorite Artist "
+        searchCont.searchBar.barTintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        searchCont.searchBar.searchTextField.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        searchCont.searchBar.searchTextField.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         searchCont.searchBar.returnKeyType = .done
         searchCont.obscuresBackgroundDuringPresentation = false
         searchCont.searchBar.enablesReturnKeyAutomatically = false
@@ -36,6 +39,11 @@ class Search: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurationUI()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string:"Search", attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
+
     }
     //MARK:- Helper
     private func configurationUI(){
@@ -68,4 +76,11 @@ extension Search: UITableViewDataSource {
         presenter?.configurationArtistCell(cell: cell, index: indexPath.row)
         return cell
     }
+
+}
+extension Search: UITableViewDataSourcePrefetching{
+  func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    presenter?.prefetchRowsAt(indexPath: indexPaths)
+  }
+
 }

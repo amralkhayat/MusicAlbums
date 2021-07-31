@@ -21,6 +21,7 @@ class ArtistCell: UITableViewCell {
 extension ArtistCell: ArtistCellView {
     func displayCellBody(artist: Artist) {
         artistName.text = artist.name
+        artistImage.loadImage(artist.image[0].text)
     }
     
     
