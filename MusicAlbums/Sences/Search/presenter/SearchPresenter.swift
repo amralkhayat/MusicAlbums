@@ -19,6 +19,7 @@ protocol SearchPresenter {
     func search(artist: String)
     var numberOfRows: Int {get }
     func prefetchRowsAt(indexPath: [IndexPath])
+    func didselectCell(index: Int)
 }
 
 protocol ArtistCellView {
@@ -27,6 +28,7 @@ protocol ArtistCellView {
 
 
 class SearchVCPresenter: SearchPresenter {
+ 
     //MARK:- Properties
     weak var view:SearchViewProtocol?
     private var interactor:  SearchInteractorProtocol
@@ -98,6 +100,11 @@ class SearchVCPresenter: SearchPresenter {
     cell.displayCellBody(artist: artists[index])
     }
     
+    func didselectCell(index: Int) {
+        print(index)
+        router.routeToAlbums(From: self.view!, artistId: artists[index].mbid)
+    }
+    
     //MARK:- Prefetch data
     func prefetchRowsAt(indexPath: [IndexPath]){
       for index in indexPath{
@@ -108,4 +115,5 @@ class SearchVCPresenter: SearchPresenter {
           break
         }
       }
+
     }

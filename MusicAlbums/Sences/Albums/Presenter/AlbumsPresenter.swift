@@ -11,8 +11,9 @@ import Foundation
         func showIndecator ()
         func hideIndecator ()
         func showError(_ Message: String)
-        func tableviewReload()
+        func collectionViewReload()
     }
+
     protocol AlbumsPresenter {
         func viewDidLoad()
         func populateAlbums()
@@ -63,7 +64,7 @@ class AlbumsVCPresenter: AlbumsPresenter {
     func dataHandling(data: AlbumModel) {
         self.view?.hideIndecator()
         self.album = data.topalbums.album
-        self.view?.tableviewReload()
+        self.view?.collectionViewReload()
     }
     
     //MARK:-  TableView Methods

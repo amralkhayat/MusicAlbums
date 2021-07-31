@@ -44,6 +44,7 @@ class Albums: UIViewController {
     
     private func configurationUI(){
         albumsCollectionView.collectionViewLayout =  layout
+        navigationItem.title = "Albums"
         presenter?.viewDidLoad()
     }
     //MARK:- Selector

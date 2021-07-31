@@ -25,7 +25,7 @@ class AlbumsViewSpy:AlbumsViewProtocol{
         errorMessage = Message
     }
     
-    func tableviewReload() {
+    func collectionViewReload() {
       reloadTableView = true
     }
     

@@ -18,8 +18,8 @@ class AlbumCell: UICollectionViewCell {
 extension AlbumCell: AlbumCellView {
     func displayCellBody(album: Album) {
         albumView.albumName.text =  album.name
-        albumView.albumArtist.text = album.artist.name.rawValue
-        albumView.albumImage.loadImage(album.image[1].text)
+        albumView.albumArtist.text = album.artist.name
+        albumView.albumImage.loadImage(album.image[2].text )
     }
     
     

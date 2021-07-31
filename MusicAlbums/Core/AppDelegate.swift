@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func mainScreenView(){
         window = UIWindow()
-        let mainScreenViewController = Albums()
+        let mainScreenViewController = MainScreen()
         let rootView = UINavigationController(rootViewController: mainScreenViewController )
         rootView.navigationBar.barTintColor =  DesignSystem.Colors.primaryColor.color
         rootView.navigationBar.tintColor = .white

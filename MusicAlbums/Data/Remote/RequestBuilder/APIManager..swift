@@ -29,6 +29,7 @@ protocol APIManagersMethods {
             
         sessionManager.request(router).responseJSON { (response) in
                 // ALAMOFIRE ERROR CHECK
+            print(response)
                 if let error = response.error {
                     responseHandler(.failure(BaseError.serverConnection))
                     print("error on request responce : \(error.localizedDescription)")
@@ -44,10 +45,12 @@ protocol APIManagersMethods {
                 do {
                     let data = try JSONDecoder().decode(T.self, from: response.data!)
                         responseHandler(.success(data))
-                }catch let error  {
+                }
+                catch let error  {
                     responseHandler(.failure(BaseError.unknownError(text: error.localizedDescription.description)))
                 }
             }.resume()
     }
 
 }
+

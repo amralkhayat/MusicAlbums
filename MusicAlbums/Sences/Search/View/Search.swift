@@ -16,6 +16,7 @@ class Search: UIViewController {
             searchTableView.tableFooterView =  UIView()
             searchTableView.registerCellNib(cellClass: ArtistCell.self)
             searchTableView.dataSource = self
+            searchTableView.delegate = self
             searchTableView.prefetchDataSource = self
         }
     }
@@ -78,6 +79,12 @@ extension Search: UITableViewDataSource {
     }
 
 }
+extension Search: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didselectCell(index: indexPath.row)
+    }
+}
+
 extension Search: UITableViewDataSourcePrefetching{
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
     presenter?.prefetchRowsAt(indexPath: indexPaths)

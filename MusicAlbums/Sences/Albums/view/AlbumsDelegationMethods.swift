@@ -7,6 +7,7 @@
 
 import UIKit
 extension Albums: AlbumsViewProtocol  {
+   
     func showIndecator() {
         DispatchQueue.main.async { [weak self ] in
             guard let self = self else {return}
@@ -22,15 +23,18 @@ extension Albums: AlbumsViewProtocol  {
     }
     
     func showError(_ Message: String) {
-        self.presentAlert(withTitle: "Error", message: Message, actions: ["Ok" : UIAlertAction.Style.default])
+        self.presentAlert(withTitle: "Error", message: Message, actions: ["Ok" : UIAlertAction.Style.default]) { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
-    func tableviewReload() {
+    func collectionViewReload() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}
             self.albumsCollectionView.reloadData()
         }
     }
     
+ 
     
 }

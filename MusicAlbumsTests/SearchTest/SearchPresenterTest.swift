@@ -118,4 +118,15 @@ class SearchPresenterTest: XCTestCase {
         XCTAssertEqual(expectedImageUrl, artistCellSpy.imageUrl, "Number of Artist mismatch")
 
     }
+    
+    func test_SearchPresnter_WhenDidSelect_ShouldNavigateToAlbums(){
+        //Given
+        let rowToSelect = 1
+        let expected = true
+        sut.artists =  ArtistModel.createAritist().results.artistmatches.artist
+        //When
+        sut.didselectCell(index: rowToSelect)
+        // Then
+        XCTAssertEqual(expected, router.isNavigateCalled)
+    }
 }

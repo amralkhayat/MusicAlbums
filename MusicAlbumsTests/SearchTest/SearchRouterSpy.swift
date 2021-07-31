@@ -8,9 +8,15 @@
 import Foundation
 @testable import MusicAlbums
 class SearchRouterSpy: SearchRouterProtocol {
+  
+    var isNavigateCalled = false
     static func searchRouterVC(view: Search) {
         
     }
     
+    func routeToAlbums(From view: SearchViewProtocol, artistId: String) {
+        isNavigateCalled = true
+        
+    }
     
 }

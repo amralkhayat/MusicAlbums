@@ -13,8 +13,8 @@ class AlbumsCellSpy: AlbumCellView {
     var albumUrlImage = ""
 
     func displayCellBody(album: Album) {
-        albumName = album.name
-        artistName = album.artist.name.rawValue
+        albumName = album.name ?? ""
+        artistName = album.artist.name ?? ""
         albumUrlImage =  album.image[0].text
     }
     
