@@ -17,6 +17,7 @@ class Albums: UIViewController {
         }
     }
     //MARK:- Properties
+    var presenter: AlbumsVCPresenter?
     let layout:UICollectionViewCompositionalLayout = {
         let fraction: CGFloat = 1/2
         let inset: CGFloat = 0.2
@@ -43,6 +44,7 @@ class Albums: UIViewController {
     
     private func configurationUI(){
         albumsCollectionView.collectionViewLayout =  layout
+        presenter?.viewDidLoad()
     }
     //MARK:- Selector
 
@@ -54,12 +56,12 @@ extension Albums: UICollectionViewDelegate{
 
 extension Albums: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        return presenter?.numberOfrow ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let albumCell = collectionView.dequeue(indexPath: indexPath) as AlbumCell
-        
+        presenter?.configurationArtistCell(cell: albumCell, index: indexPath.item)
         return albumCell
     }
     

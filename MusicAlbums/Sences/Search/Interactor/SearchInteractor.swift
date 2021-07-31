@@ -22,10 +22,6 @@ class SearchInteractor: SearchInteractorProtocol{
             case .failure(let error):
                 responseHandler(.failure(error))
             }
-            
-            
-            
-            
         }
     }
     

@@ -14,6 +14,17 @@
 		DD0696AB26B543D2003B6712 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696A926B543D2003B6712 /* AlbumCell.swift */; };
 		DD0696AC26B543D2003B6712 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0696AA26B543D2003B6712 /* AlbumCell.xib */; };
 		DD0696AE26B54651003B6712 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696AD26B54651003B6712 /* UICollectionView+Extension.swift */; };
+		DD0696B126B57779003B6712 /* AlbumsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696B026B57779003B6712 /* AlbumsPresenter.swift */; };
+		DD0696B426B5789A003B6712 /* AlbumsInteractror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696B326B5789A003B6712 /* AlbumsInteractror.swift */; };
+		DD0696B726B578E5003B6712 /* AlbumsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696B626B578E5003B6712 /* AlbumsRouter.swift */; };
+		DD0696B926B57A82003B6712 /* AlbumsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696B826B57A82003B6712 /* AlbumsPresenterTest.swift */; };
+		DD0696BB26B57B22003B6712 /* AlbumsInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696BA26B57B22003B6712 /* AlbumsInteractorSpy.swift */; };
+		DD0696BD26B57B9A003B6712 /* AlbumsViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696BC26B57B9A003B6712 /* AlbumsViewSpy.swift */; };
+		DD0696BF26B57BEE003B6712 /* AlbumsRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696BE26B57BEE003B6712 /* AlbumsRouterSpy.swift */; };
+		DD0696C126B57E8D003B6712 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696C026B57E8D003B6712 /* AlbumModel.swift */; };
+		DD0696C326B58A42003B6712 /* AlbumModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696C226B58A42003B6712 /* AlbumModelTest.swift */; };
+		DD0696C526B5997D003B6712 /* AlbumsCellSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696C426B5997D003B6712 /* AlbumsCellSpy.swift */; };
+		DD0696C726B59D70003B6712 /* AlbumsDelegationMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0696C626B59D70003B6712 /* AlbumsDelegationMethods.swift */; };
 		DD43DCBD26B2FE2C006E9979 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43DCBC26B2FE2C006E9979 /* SearchPresenter.swift */; };
 		DD43DCC126B2FF78006E9979 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43DCC026B2FF78006E9979 /* SearchRouter.swift */; };
 		DD43DCC326B2FFF9006E9979 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43DCC226B2FFF9006E9979 /* SearchInteractor.swift */; };
@@ -80,6 +91,17 @@
 		DD0696A926B543D2003B6712 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		DD0696AA26B543D2003B6712 /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		DD0696AD26B54651003B6712 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		DD0696B026B57779003B6712 /* AlbumsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsPresenter.swift; sourceTree = "<group>"; };
+		DD0696B326B5789A003B6712 /* AlbumsInteractror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsInteractror.swift; sourceTree = "<group>"; };
+		DD0696B626B578E5003B6712 /* AlbumsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRouter.swift; sourceTree = "<group>"; };
+		DD0696B826B57A82003B6712 /* AlbumsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsPresenterTest.swift; sourceTree = "<group>"; };
+		DD0696BA26B57B22003B6712 /* AlbumsInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsInteractorSpy.swift; sourceTree = "<group>"; };
+		DD0696BC26B57B9A003B6712 /* AlbumsViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewSpy.swift; sourceTree = "<group>"; };
+		DD0696BE26B57BEE003B6712 /* AlbumsRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsRouterSpy.swift; sourceTree = "<group>"; };
+		DD0696C026B57E8D003B6712 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		DD0696C226B58A42003B6712 /* AlbumModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModelTest.swift; sourceTree = "<group>"; };
+		DD0696C426B5997D003B6712 /* AlbumsCellSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCellSpy.swift; sourceTree = "<group>"; };
+		DD0696C626B59D70003B6712 /* AlbumsDelegationMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsDelegationMethods.swift; sourceTree = "<group>"; };
 		DD43DCBC26B2FE2C006E9979 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		DD43DCC026B2FF78006E9979 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		DD43DCC226B2FFF9006E9979 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
@@ -171,6 +193,7 @@
 			children = (
 				DDDA196226B2C51600A1CC1B /* Albums.swift */,
 				DDDA196326B2C51600A1CC1B /* Albums.xib */,
+				DD0696C626B59D70003B6712 /* AlbumsDelegationMethods.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -179,6 +202,11 @@
 			isa = PBXGroup;
 			children = (
 				DD0696A026B537A7003B6712 /* AlbumsViewControllerTest.swift */,
+				DD0696B826B57A82003B6712 /* AlbumsPresenterTest.swift */,
+				DD0696BA26B57B22003B6712 /* AlbumsInteractorSpy.swift */,
+				DD0696BC26B57B9A003B6712 /* AlbumsViewSpy.swift */,
+				DD0696BE26B57BEE003B6712 /* AlbumsRouterSpy.swift */,
+				DD0696C426B5997D003B6712 /* AlbumsCellSpy.swift */,
 			);
 			path = AlbumsTest;
 			sourceTree = "<group>";
@@ -210,6 +238,30 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		DD0696AF26B57766003B6712 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DD0696B026B57779003B6712 /* AlbumsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DD0696B226B57888003B6712 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				DD0696B326B5789A003B6712 /* AlbumsInteractror.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		DD0696B526B578D6003B6712 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DD0696B626B578E5003B6712 /* AlbumsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		DD43DCBB26B2FE13006E9979 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				DD43DCC526B30E13006E9979 /* AritistModel.swift */,
+				DD0696C026B57E8D003B6712 /* AlbumModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				DD43DCDD26B3313B006E9979 /* AritistModelTest.swift */,
+				DD0696C226B58A42003B6712 /* AlbumModelTest.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -460,6 +514,9 @@
 		DDDA195826B2C46700A1CC1B /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				DD0696B526B578D6003B6712 /* Router */,
+				DD0696B226B57888003B6712 /* Interactor */,
+				DD0696AF26B57766003B6712 /* Presenter */,
 				DD0696A826B543B5003B6712 /* Cell */,
 				DD06969E26B53755003B6712 /* view */,
 			);
@@ -680,6 +737,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD43DCBD26B2FE2C006E9979 /* SearchPresenter.swift in Sources */,
+				DD0696C126B57E8D003B6712 /* AlbumModel.swift in Sources */,
+				DD0696B126B57779003B6712 /* AlbumsPresenter.swift in Sources */,
+				DD0696C726B59D70003B6712 /* AlbumsDelegationMethods.swift in Sources */,
+				DD0696B726B578E5003B6712 /* AlbumsRouter.swift in Sources */,
 				DD43DCCD26B31031006E9979 /* NetworkRequestError.swift in Sources */,
 				DDDA196E26B2CBC600A1CC1B /* DesignSystem.swift in Sources */,
 				DDA0981826B3DFA7007F3431 /* NibLoadingView.swift in Sources */,
@@ -702,6 +763,7 @@
 				DD43DCD326B314E1006E9979 /* ArtistAPI.swift in Sources */,
 				DDDA196026B2C50500A1CC1B /* Search.swift in Sources */,
 				DDA0981F26B428F4007F3431 /* UIImageView+Extension.swift in Sources */,
+				DD0696B426B5789A003B6712 /* AlbumsInteractror.swift in Sources */,
 				DDDA197A26B2E3D900A1CC1B /* UIView+Extension.swift in Sources */,
 				DD43DCC626B30E13006E9979 /* AritistModel.swift in Sources */,
 				DD58684626B267B600729A6A /* AppDelegate.swift in Sources */,
@@ -712,12 +774,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0696BB26B57B22003B6712 /* AlbumsInteractorSpy.swift in Sources */,
+				DD0696C326B58A42003B6712 /* AlbumModelTest.swift in Sources */,
 				DD43DCD926B32742006E9979 /* MockURLSession.swift in Sources */,
+				DD0696C526B5997D003B6712 /* AlbumsCellSpy.swift in Sources */,
 				DD43DCDE26B3313B006E9979 /* AritistModelTest.swift in Sources */,
 				DDA0982926B4497D007F3431 /* SearchViewSpa.swift in Sources */,
+				DD0696BF26B57BEE003B6712 /* AlbumsRouterSpy.swift in Sources */,
 				DDA0982B26B475B8007F3431 /* AritistCellSpy.swift in Sources */,
+				DD0696BD26B57B9A003B6712 /* AlbumsViewSpy.swift in Sources */,
 				DD0696A126B537A7003B6712 /* AlbumsViewControllerTest.swift in Sources */,
 				DDA0982226B44830007F3431 /* SearchPresenterTest.swift in Sources */,
+				DD0696B926B57A82003B6712 /* AlbumsPresenterTest.swift in Sources */,
 				DDA0982526B44949007F3431 /* SearchInteractortSpy.swift in Sources */,
 				DD43DCDB26B3277E006E9979 /* APIManagerTest.swift in Sources */,
 				DDA0982726B44964007F3431 /* SearchRouterSpy.swift in Sources */,

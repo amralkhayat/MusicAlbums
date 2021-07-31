@@ -9,9 +9,18 @@ import UIKit
 
 class AlbumCell: UICollectionViewCell {
 
+    @IBOutlet weak var albumView: AlbumView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
+}
+extension AlbumCell: AlbumCellView {
+    func displayCellBody(album: Album) {
+        albumView.albumName.text =  album.name
+        albumView.albumArtist.text = album.artist.name.rawValue
+        albumView.albumImage.loadImage(album.image[1].text)
+    }
+    
+    
 }

@@ -32,6 +32,9 @@
                 <constraint firstAttribute="trailing" secondItem="DBT-Te-xak" secondAttribute="trailing" id="xgN-8f-J25"/>
             </constraints>
             <size key="customSize" width="227" height="321"/>
+            <connections>
+                <outlet property="albumView" destination="DBT-Te-xak" id="bqY-Ik-M98"/>
+            </connections>
             <point key="canvasLocation" x="1" y="103"/>
         </collectionViewCell>
     </objects>
