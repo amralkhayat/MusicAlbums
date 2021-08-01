@@ -20,7 +20,7 @@ class AlbumsViewControllerTest: XCTestCase {
         sut = nil
         super.tearDown()
     }
-    
+    //MARK:- Tests
     func test_Albums_CanInstantiateAlbums_ViewController (){
         XCTAssertNotNil(sut)
     }
@@ -44,7 +44,11 @@ class AlbumsViewControllerTest: XCTestCase {
         XCTAssertTrue(sut.responds(to: #selector(sut.collectionView(_:cellForItemAt:))))
     }
     
-    
+    func test_Albums_ShouldToConformsToCollectionViewDelegate(){
+        XCTAssert(sut.conforms(to: UICollectionViewDelegate.self))
+        XCTAssertTrue(sut.responds(to: #selector(sut.collectionView(_:didSelectItemAt:))))
+      
+    }
     
     
     

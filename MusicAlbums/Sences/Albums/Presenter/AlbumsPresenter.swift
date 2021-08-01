@@ -67,6 +67,8 @@ class AlbumsVCPresenter: AlbumsPresenter {
         self.view?.collectionViewReload()
     }
     
+    
+    
     //MARK:-  TableView Methods
     var numberOfrow: Int {
         return album.count
@@ -77,5 +79,17 @@ class AlbumsVCPresenter: AlbumsPresenter {
       cell.displayCellBody(album: album[index])
         
     }
+    
+    func didSelect(item: Int) {
+        let album = album[item]
+        let albumDetails = AlbumDetailsModel()
+        albumDetails.albumName = album.name
+        albumDetails.albumImageUrl = album.image[2].text
+        albumDetails.albumId = album.mbid ?? ""
+        albumDetails.playAccount = album.playcount ?? 0
+        albumDetails.artistName = album.artist.name
+        router.routeToAlbumsDetails(From: self.view!, albumDeatils: albumDetails)
+    }
+    
     
 }

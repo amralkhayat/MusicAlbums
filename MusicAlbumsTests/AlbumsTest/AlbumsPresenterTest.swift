@@ -100,4 +100,16 @@ class AlbumsPresenterTest: XCTestCase {
         XCTAssertEqual(expectedartistName ,  albumCellSpy.artistName ,"Name of Artist mismatch")
         XCTAssertEqual(expectedimageUr ,  albumCellSpy.albumUrlImage, "Name of Album url mismatch")
     }
+    
+    
+    func test_AlbumPresnter_WhenDidSelect_ShouldNavigateToAlbumDetails(){
+        //Given
+        let itemToSelect = 0
+        let expected = true
+        sut.album = AlbumModel.createAlbum().topalbums.album
+        //When
+        sut.didSelect(item: itemToSelect)
+        // Then
+        XCTAssertEqual(expected, router.isRouteToAlbumsDetailsCalled)
+    }
 }

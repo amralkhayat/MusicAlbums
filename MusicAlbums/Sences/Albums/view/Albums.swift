@@ -52,7 +52,9 @@ class Albums: UIViewController {
 }
 
 extension Albums: UICollectionViewDelegate{
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.didSelect(item: indexPath.item)
+    }
 }
 
 extension Albums: UICollectionViewDataSource{

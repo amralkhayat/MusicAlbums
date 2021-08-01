@@ -101,7 +101,6 @@ class SearchVCPresenter: SearchPresenter {
     }
     
     func didselectCell(index: Int) {
-        print(index)
         router.routeToAlbums(From: self.view!, artistId: artists[index].mbid)
     }
     
