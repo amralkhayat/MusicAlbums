@@ -13,7 +13,7 @@ protocol AlbumDetailsRouterProtocol {
 
 class AlbumDetailsRouter: AlbumDetailsRouterProtocol {
     static func AlbumsDetailsRouterVC(albumDetails: AlbumDetailsModel) -> UIViewController {
-        let view =  AlbumDetails()
+        let view =  AlbumDetailsViewController()
         let interactor = AlbumDetailsInteractor()
         let router = AlbumDetailsRouter()
         let presenter = AlbumDetailsVcPresnter(view: view , interactor: interactor, router:router  ,albumDetailsModel: albumDetails)

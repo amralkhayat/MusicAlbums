@@ -7,7 +7,11 @@
 
 import Foundation
 @testable import MusicAlbums
-class AlbumDetailsCellSpy: AlbumDetailsCellView {
+class AlbumDetailsCellSpy: HeaderCellView {
+    func displayCellBody(albumDetails: AlbumInfo) {
+        
+    }
+    
     var albumName = ""
     var playAccount = 0
      var artistName = ""

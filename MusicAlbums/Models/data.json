@@ -1,0 +1,253 @@
+
+
+    {
+        "album": {
+            "artist": "Armin van Buuren",
+            "playcount": "2797591",
+            "image": [
+                {
+                    "size": "small",
+                    "#text": "https://lastfm.freetls.fastly.net/i/u/34s/57f8e28f8b184651c6f2ed323c13f858.jpg"
+                },
+                {
+                    "size": "medium",
+                    "#text": "https://lastfm.freetls.fastly.net/i/u/64s/57f8e28f8b184651c6f2ed323c13f858.jpg"
+                },
+                {
+                    "size": "large",
+                    "#text": "https://lastfm.freetls.fastly.net/i/u/174s/57f8e28f8b184651c6f2ed323c13f858.jpg"
+                },
+                {
+                    "size": "extralarge",
+                    "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/57f8e28f8b184651c6f2ed323c13f858.jpg"
+                },
+                {
+                    "size": "mega",
+                    "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/57f8e28f8b184651c6f2ed323c13f858.jpg"
+                },
+                {
+                    "size": "",
+                    "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/57f8e28f8b184651c6f2ed323c13f858.jpg"
+                }
+            ],
+            "listeners": "152237",
+            "tags": {
+                "tag": [
+                    {
+                        "name": "trance",
+                        "url": "https://www.last.fm/tag/trance"
+                    },
+                    {
+                        "name": "vocal trance",
+                        "url": "https://www.last.fm/tag/vocal+trance"
+                    },
+                    {
+                        "name": "progressive trance",
+                        "url": "https://www.last.fm/tag/progressive+trance"
+                    },
+                    {
+                        "name": "electronic",
+                        "url": "https://www.last.fm/tag/electronic"
+                    },
+                    {
+                        "name": "armin van buuren",
+                        "url": "https://www.last.fm/tag/armin+van+buuren"
+                    }
+                ]
+            },
+            "tracks": {
+                "track": [
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+van+Buuren",
+                            "name": "Armin van Buuren",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 1
+                        },
+                        "duration": 567,
+                        "url": "https://www.last.fm/music/Armin+van+Buuren/Imagine/Imagine",
+                        "name": "Imagine",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+Van+Buuren+&+DJ+Shah+feat.+Chris+Jones",
+                            "name": "Armin Van Buuren & DJ Shah feat. Chris Jones",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 2
+                        },
+                        "duration": 214,
+                        "url": "https://www.last.fm/music/Armin+Van+Buuren+&+DJ+Shah+feat.+Chris+Jones/Imagine/Going+Wrong",
+                        "name": "Going Wrong",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+van+Buuren",
+                            "name": "Armin van Buuren",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 3
+                        },
+                        "duration": 483,
+                        "url": "https://www.last.fm/music/Armin+van+Buuren/Imagine/Unforgivable",
+                        "name": "Unforgivable",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+van+Buuren",
+                            "name": "Armin van Buuren",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 4
+                        },
+                        "duration": 482,
+                        "url": "https://www.last.fm/music/Armin+van+Buuren/Imagine/Face+To+Face",
+                        "name": "Face To Face",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+van+Buuren",
+                            "name": "Armin van Buuren",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 5
+                        },
+                        "duration": 436,
+                        "url": "https://www.last.fm/music/Armin+van+Buuren/Imagine/Hold+On+To+Me",
+                        "name": "Hold On To Me",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+van+Buuren+feat.+Sharon+den+Adel",
+                            "name": "Armin van Buuren feat. Sharon den Adel",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 6
+                        },
+                        "duration": 182,
+                        "url": "https://www.last.fm/music/Armin+van+Buuren+feat.+Sharon+den+Adel/Imagine/In+And+Out+Of+Love",
+                        "name": "In And Out Of Love",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+van+Buuren",
+                            "name": "Armin van Buuren",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 7
+                        },
+                        "duration": 419,
+                        "url": "https://www.last.fm/music/Armin+van+Buuren/Imagine/Never+Say+Never",
+                        "name": "Never Say Never",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+van+Buuren",
+                            "name": "Armin van Buuren",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 8
+                        },
+                        "duration": 430,
+                        "url": "https://www.last.fm/music/Armin+van+Buuren/Imagine/Rain",
+                        "name": "Rain",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+van+Buuren",
+                            "name": "Armin van Buuren",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 9
+                        },
+                        "duration": 438,
+                        "url": "https://www.last.fm/music/Armin+van+Buuren/Imagine/What+If",
+                        "name": "What If",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+Van+Buuren+feat.+Jennifer+Rene",
+                            "name": "Armin Van Buuren feat. Jennifer Rene",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 10
+                        },
+                        "duration": 386,
+                        "url": "https://www.last.fm/music/Armin+Van+Buuren+feat.+Jennifer+Rene/Imagine/Fine+Without+You",
+                        "name": "Fine Without You",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    },
+                    {
+                        "artist": {
+                            "url": "https://www.last.fm/music/Armin+van+Buuren",
+                            "name": "Armin van Buuren",
+                            "mbid": "477b8c0c-c5fc-4ad2-b5b2-191f0bf2a9df"
+                        },
+                        "@attr": {
+                            "rank": 11
+                        },
+                        "duration": 426,
+                        "url": "https://www.last.fm/music/Armin+van+Buuren/Imagine/Intricacy",
+                        "name": "Intricacy",
+                        "streamable": {
+                            "fulltrack": "0",
+                            "#text": "0"
+                        }
+                    }
+                ]
+            },
+            "name": "Imagine",
+            "url": "https://www.last.fm/music/Armin+van+Buuren/Imagine"
+        }
+    }
+

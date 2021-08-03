@@ -7,7 +7,9 @@
 
 import UIKit
 
-class AlbumDetails: UIViewController ,AlbumDetailsViewProtocol{
+class AlbumDetails: UIViewController {
+
+    
     //MARK:- IBOUTLETS
 
     @IBOutlet weak var albumDetailsTableView: UITableView!{
@@ -16,7 +18,7 @@ class AlbumDetails: UIViewController ,AlbumDetailsViewProtocol{
             albumDetailsTableView.dataSource = self
             albumDetailsTableView.rowHeight =  300
             albumDetailsTableView.tableFooterView =  UIView()
-            albumDetailsTableView.registerCellNib(cellClass: AlbumDetailsCell.self)
+            albumDetailsTableView.registerCellNib(cellClass: TrackCell.self)
             albumDetailsTableView.registerCellNib(cellClass: AlbumDetailsHeaderCell.self)
         }
     }
@@ -36,7 +38,7 @@ class AlbumDetails: UIViewController ,AlbumDetailsViewProtocol{
    extension  AlbumDetails: UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell =  tableView.dequeue() as AlbumDetailsHeaderCell
-        presenter?.configurationAlbumDetailsCell(cell:  headerCell)
+//        presenter?.configurationAlbumDetailsCell(cell:  headerCell)
         return headerCell
     }
     
@@ -52,8 +54,8 @@ class AlbumDetails: UIViewController ,AlbumDetailsViewProtocol{
       }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let albumDetailsCell = tableView.dequeue() as AlbumDetailsCell
-        presenter?.configurationAlbumDetailsCell(cell:  albumDetailsCell)
+        let albumDetailsCell = tableView.dequeue() as TrackCell
+//        presenter?.configurationAlbumDetailsCell(cell:  albumDetailsCell)
         return albumDetailsCell
 
 }

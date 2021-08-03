@@ -25,27 +25,191 @@ class AlnumsDetailsPresenterTest: XCTestCase {
     }
    
     //MARK:- Tests
-    func test_AlbumDetailsPresnter_WhenLoad_Should_has_release_data(){
+      //MARK:- CREATE
+    func test_AlbumDetailsPresnter_WhenWriteObject_Should_SaveDataToLoaclStorage_showMessageSucces_HideIndicator(){
        // Given
-        let albumDetailsCellSpy = AlbumDetailsCellSpy()
-        sut.albumDetails =  AlbumDetailsModel.createAlbumDetails()
-        let expectedAlbumName = "Imagine"
-        let expectePlayAccount = 2797373
-         let expecteArtistName = "Armin van Buuren"
-         let expecteAlbumImageUrl = "https://lastfm.freetls.fastly.net/i/u/300x300/57f8e28f8b184651c6f2ed323c13f858.png"
-         let  expecteAlbumId = "56a006b0-e615-314b-9b45-86455f0d757b"
-        //When
-        sut.configurationAlbumDetailsCell(cell: albumDetailsCellSpy)
+         let message = "Data successfully saved"
+        interactor.resultToBeReturned = .success(message)
+        let expected = true
+        let data = AlbumInfo.createAlbumDetails()
+          // When
+        sut.writeObject(album:data)
+         // Then
+        XCTAssertEqual(view.isShowIndicator, expected)
+        XCTAssertEqual(view.isHideIndicator, expected)
+        XCTAssertEqual(view.message, message)
+    }
+    
+    func test_AlbumDetailsPresnter_WhenWriteObject_ShouldNot_SaveDataToLoaclStorage_showMessageFailure_HideIndicator(){
+       // Given
+        let errorMessage = RuntimeError.NoRealmSet("Data Could not Successfully saved ")
+        interactor.resultToBeReturned = .failure(errorMessage)
+        let expected = true
+        let data = AlbumInfo.createAlbumDetails()
+          // When
+        sut.writeObject(album:data)
+         // Then
+        
+        XCTAssertEqual(view.isHideIndicator, expected)
+        XCTAssertEqual(view.message, errorMessage.localizedDescription)
+    }
+    
+    func test_AlbumDetailsPresnter_WhenWriteObjectWithEmptyObject_ShouldNot_SaveDataToLoaclStorage_showMessageFailure_HideIndicator(){
+       // Given
+        let errorMessage = RuntimeError.NoRealmSet("Could not save data becuse object is Empty ")
+        interactor.resultToBeReturned = .failure(errorMessage)
+        let expected = true
+        let data = AlbumInfo()
+          // When
+        sut.writeObject(album:data)
+         // Then
+        
+        XCTAssertEqual(view.isHideIndicator, expected)
+        XCTAssertEqual(view.message, errorMessage.localizedDescription)
+    }
 
-        //Then
-        XCTAssertEqual(expectedAlbumName ,  albumDetailsCellSpy.albumName, "albumName mismatch")
-        XCTAssertEqual(expectePlayAccount ,  albumDetailsCellSpy.playAccount, "playAccount mismatch")
-        XCTAssertEqual(expecteArtistName ,  albumDetailsCellSpy.artistName, "artistName mismatch")
-        XCTAssertEqual(expecteAlbumImageUrl ,  albumDetailsCellSpy.albumImageUrl, "albumImageUrl  mismatch")
-        XCTAssertEqual(expecteAlbumId ,  albumDetailsCellSpy.albumId, "albumId mismatch")
-      
+    
+    
+    //MARK:- DELETE
+    func test_AlbumDetailsPresnter_WhenDeleteObject_Should_DeleteFromLoaclStorage_showMessageSucces_HideIndicator(){
+       // Given
+         let message = "Data successfully Deleted"
+        interactor.resultToBeReturned = .success(message)
+        let expected = true
+        let data = AlbumInfo.createAlbumDetails()
+          // When
+        sut.writeObject(album:data)
+        sut.deleteObject(album: data)
+         // Then
+        XCTAssertEqual(view.isShowIndicator, expected)
+        XCTAssertEqual(view.isHideIndicator, expected)
+        XCTAssertEqual(view.message, message)
+    }
+    
+    func test_AlbumDetailsPresnter_WhenDeleteObject_ShouldNot_DeleteFromLoaclStorage_showMessageSucces_HideIndicator(){
+       // Given
+        let errorMessage = RuntimeError.NoRealmSet("Data Could not Successfully Deleted")
+        interactor.resultToBeReturned = .failure(errorMessage)
+        let expected = true
+        let data = AlbumInfo.createAlbumDetails()
+          // When
+        sut.writeObject(album:data)
+        sut.deleteObject(album: data)
+         // Then
+        XCTAssertEqual(view.isHideIndicator, expected)
+        XCTAssertEqual(view.message, errorMessage.localizedDescription)
     }
     
     
+    //MARK:- READ
+    func test_AlbumDetailsPresnter_WhenReadObject_ShouldReadDataFromPrimaryKey_HideIndecator_ReloadTableView(){
+       // Given
+        let expected = true
+        let expectedPrimaryKey = "Imagine"
+        let data = AlbumInfo.createAlbumDetails()
+        interactor.resultReadReturend = .success(data)
+        interactor.resultToBeReturned = .success( "Data successfully saved")
+          // When
+        sut.writeObject(album:data)
+        
+        sut.readObject(primaryKey: expectedPrimaryKey)
+         // Then
+        XCTAssertEqual(view.isHideIndicator, expected)
+        XCTAssertEqual(sut.albumInfo?.album?.name,expectedPrimaryKey)
+    }
 
+    func test_AlbumDetailsPresnter_WhenReadObject_ShouldNotReadNoDataSaved_HideIndecator_showErrorMessage(){
+       // Given
+        let expected = true
+        let expectedPrimaryKey = "Imagine"
+        let expectedError = RuntimeError.NoRealmSet("Data has been saved")
+        interactor.resultReadReturend = .failure(expectedError)
+          // When
+        sut.readObject(primaryKey: expectedPrimaryKey)
+         // Then
+        XCTAssertEqual(view.isHideIndicator, expected)
+        XCTAssertNotEqual(sut.albumInfo?.album?.name,expectedPrimaryKey)
+        XCTAssertEqual(view.message, expectedError.localizedDescription)
+    }
+    
+  //MARK:- Request Respones
+    func test_AlbumInfoPresnter_WhenPopulateAlbumInfoFromApiRequest_ShouldShowIndecator(){
+       // given
+        let expected =  true
+        let error = BaseError.serverConnection
+        interactor.resultToBeReturnedRemote = .failure(error)
+       //When
+        sut.populateAlbumInfoFromApiRequest()
+        //Then
+        XCTAssertEqual(expected, view.isShowIndicator)
+    }
+    
+    
+    func test_AlbumsInfoPresnter_WhenPopulateAlbumInfoFromApiReques_Success_HideIndecator_ReloadTableView(){
+ //
+ //     // Given
+         let expected =  true
+        let albumInfo =  AlbumInfo.createAlbumDetails()
+         interactor.resultToBeReturnedRemote = .success(albumInfo)
+ 
+         //When
+        sut.populateAlbumInfoFromApiRequest()
+ 
+         // Then
+         XCTAssertEqual(expected,view.isTableViewCalled)
+         XCTAssertEqual(expected, view.isHideIndicator)
+ 
+     }
+    
+    
+        func test_AlbumsInfoPresnter_WhenPopulateAlbumInfoFromApiReques_Failure_HideIndecator_displayRetrievalError(){
+    
+    //     // Given
+            let expected =  true
+            let error = BaseError.serverConnection
+            interactor.resultToBeReturnedRemote = .failure(error)
+    
+            //When
+            sut.populateAlbumInfoFromApiRequest()
+    
+            // Then
+            XCTAssertEqual(error.localizedDescription,view.message, "Error message doesn't match")
+            XCTAssertEqual(expected, view.isHideIndicator)
+    
+        }
+    
+    
+    //MARK:- Mulitple load data source
+    
+    func test_AlbumsInfoPresnter_populateAlbumInfo_WhenThereisPrimaryKeyLoadDataFromLocal(){
+        // Given
+         let expected = true
+         let expectedPrimaryKey = "Imagine"
+         let data = AlbumInfo.createAlbumDetails()
+         interactor.resultReadReturend = .success(data)
+         interactor.resultToBeReturned = .success( "Data successfully saved")
+           // When
+         sut.writeObject(album:data)
+         sut.readObject(primaryKey: expectedPrimaryKey)
+          sut.populateAlbumInfo()
+          // Then
+         XCTAssertEqual(view.isHideIndicator, expected)
+         XCTAssertEqual(sut.albumInfo?.album?.name,expectedPrimaryKey)
+
+    }
+    
+    
+    func test_AlbumsInfoPresnter_populateAlbumInfo_WhenThereIsNOPrimaryKey_LoadDataServer(){
+        // Given
+         let expected = true
+         let albumInfo =  AlbumInfo.createAlbumDetails()
+         interactor.resultToBeReturnedRemote = .success(albumInfo)
+           // When
+          sut.viewdidLoad()
+          // Then
+         XCTAssertEqual(view.isHideIndicator, expected)
+
+    }
+
+    
 }
