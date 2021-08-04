@@ -9,9 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlbumDetails" customModule="MusicAlbums" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreen" customModule="MusicAlbums" customModuleProvider="target">
             <connections>
-                <outlet property="albumDetailsTableView" destination="GOd-Ce-bXX" id="WVS-H9-Leq"/>
+                <outlet property="mainScreenCollectionView" destination="La1-gG-VHj" id="ONg-Z8-Igi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,18 +20,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-Ce-bXX">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="La1-gG-VHj">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hft-gv-RBO">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="PrimaryColor"/>
             <constraints>
-                <constraint firstItem="GOd-Ce-bXX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QTJ-gr-yO1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GOd-Ce-bXX" secondAttribute="trailing" id="SxV-aO-xRM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GOd-Ce-bXX" secondAttribute="bottom" id="mNc-Xn-Jmw"/>
-                <constraint firstItem="GOd-Ce-bXX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tbR-Ao-Qkl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="La1-gG-VHj" secondAttribute="bottom" id="7Ux-t2-vlp"/>
+                <constraint firstItem="La1-gG-VHj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7hQ-Ba-LWB"/>
+                <constraint firstItem="La1-gG-VHj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OmG-dZ-Wbk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="La1-gG-VHj" secondAttribute="trailing" id="eor-W4-WP3"/>
             </constraints>
             <point key="canvasLocation" x="132" y="104"/>
         </view>

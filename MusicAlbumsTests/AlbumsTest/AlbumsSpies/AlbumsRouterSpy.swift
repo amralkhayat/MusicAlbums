@@ -9,7 +9,7 @@ import UIKit
 @testable import MusicAlbums
 class AlbumsRouterSpy:AlbumsRouterProtocol{
       var isRouteToAlbumsDetailsCalled = false
-    func routeToAlbumsDetails(From view: AlbumsViewProtocol, albumDeatils: AlbumDetailsModel) {
+    func routeToAlbumsDetails(From view: AlbumsViewProtocol,albumConfiguration: AlbumConfiguratinModel) {
         isRouteToAlbumsDetailsCalled = true
     }
     

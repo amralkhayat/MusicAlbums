@@ -9,57 +9,13 @@ import Foundation
 import RealmSwift
 
 
-@objcMembers class AlbumDetailsModel: Object{
-    dynamic var albumName: String? = nil
-    dynamic var playAccount: Int =  0
-    dynamic var artistName: String? = nil
-    dynamic var albumImageUrl: String? = nil
-    dynamic var albumId: String = ""
-    
-    convenience init(albumName: String?,playAccount: Int ,artistName: String?
-                     ,albumImageUrl: String?,albumId: String) {
-    
-        self.init()
-        self.albumName = albumName
-        self.playAccount = playAccount
-        self.artistName = artistName
-        self.albumImageUrl = albumImageUrl
-        self.albumId = albumId
-        
-    }
-    
-    override static func primaryKey() -> String? {
-       return "albumId"
-    }
-    
-}
-
-@objcMembers class SavedAlbums: Object{
-    dynamic var id: String = ""
-    var albums = List<AlbumDetailsModel> ()
-    override class func primaryKey() -> String? {
-        return "id"
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @objcMembers class AlbumInfo:Object , Codable {
     dynamic var album:AlbumData?
     dynamic var id = ""
 
-             
+        
     convenience init(album:AlbumData) {
         self.init()
         self.album = album
@@ -126,10 +82,6 @@ import RealmSwift
     }
     
 }
-
-
-
-
 // MARK: - Tracks
 @objcMembers class Tracks: Object, Codable{
     dynamic var id: String = ""
@@ -227,4 +179,12 @@ import RealmSwift
     override class func primaryKey() -> String? {
         return "text"
     }
+}
+
+//MARK:- AlbumConfiguratinModel
+struct AlbumConfiguratinModel{
+    var albumName: String = ""
+    var albumId: String = ""
+    var artistName: String = ""
+    
 }

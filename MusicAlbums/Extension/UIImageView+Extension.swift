@@ -11,7 +11,6 @@ import AlamofireImage
 extension UIImageView {
     func loadImage(_ urlImage: String){
         guard let url = URL(string: urlImage) else {return}
-        
         self.af.setImage(withURL:url,cacheKey: urlImage, placeholderImage: #imageLiteral(resourceName: "CoverMusic"))
        
     }

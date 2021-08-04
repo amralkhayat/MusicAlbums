@@ -10,10 +10,10 @@ import XCTest
 class AlbumsDetailsViewControllerTest: XCTestCase {
 
     // MARK: - Properities
-    var sut: AlbumDetails!
+    var sut: AlbumDetailsViewController!
     //MARK:- Set up
     override func setUp() {
-        sut =  AlbumDetails()
+        sut = AlbumDetailsViewController()
         sut.loadViewIfNeeded()
     }
     override func tearDown() {

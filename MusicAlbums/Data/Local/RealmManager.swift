@@ -14,11 +14,11 @@ protocol RealmManagerMethods {
     func read<R:Object,T>  (_ object: R.Type ,primaryKey:T) -> R?
     func delete <D:Object>( _ object:D,responseHandler: @escaping CallResponse<String>)
     func objectExists<E:Object,T>(_ object:E.Type,primaryKey:T) -> Bool
+    func readObjects<R:Object>  (_ object: R.Type) -> [R]
 }
 
 
 class RealmManager: RealmManagerMethods {
-    
     private var realm:Realm!
     
     init(realm: Realm) {
@@ -59,9 +59,16 @@ class RealmManager: RealmManagerMethods {
     
     
     func read<R, T>(_ object: R.Type, primaryKey: T) -> R? where R : Object {
+        
         return  realm.object(ofType: object, forPrimaryKey: primaryKey)
     }
 
+    func readObjects<R>(_ object: R.Type) -> [R] where R : Object {
+        let result = realm.objects(object)
+        return Array(result)
+    }
+    
+    
     
     func delete<D>(_ object: D, responseHandler: @escaping CallResponse<String>) where D : Object {
         
@@ -77,16 +84,9 @@ class RealmManager: RealmManagerMethods {
     
     
     func objectExists<E, T>(_ object: E.Type, primaryKey: T) -> Bool where E : Object {
-
          return realm.object(ofType:  object, forPrimaryKey: primaryKey) != nil
     }
     
-    
-    
-    
-    
-    
-
 }
 
 enum RuntimeError: Error
@@ -105,3 +105,4 @@ enum RuntimeError: Error
     }
   
 }
+

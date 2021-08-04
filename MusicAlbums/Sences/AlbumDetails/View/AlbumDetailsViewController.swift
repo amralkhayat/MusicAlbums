@@ -31,13 +31,29 @@ class AlbumDetailsViewController: UIViewController {
         super.viewDidLoad()
         configurationUI()
     }
- 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Make the navigation bar background clear
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Restore the navigation bar to default
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        navigationController?.navigationBar.shadowImage = nil
+    }
     //MARK:- Helper
     private func configurationUI(){
         presenter?.viewdidLoad()
          headerView = StretchyHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 300))
         self.albumDetailsTableView.tableHeaderView = headerView
         navigationItem.largeTitleDisplayMode = .never
+        
     
     }
 
@@ -47,6 +63,16 @@ class AlbumDetailsViewController: UIViewController {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell =  tableView.dequeue() as AlbumDetailsHeaderCell
         presenter?.configurationHeaderCell(cell: headerCell)
+        
+        headerCell.tapCallback = {
+            if self.presenter?.downloadAndDelete() == true {
+                headerCell.saveAndDeleteButton.setImage(#imageLiteral(resourceName: "downloaded"), for: .normal)
+            }else{
+                headerCell.saveAndDeleteButton.setImage(#imageLiteral(resourceName: "undownload"), for: .normal)
+            }
+            
+        }
+      
         return headerCell
     }
     
@@ -87,7 +113,10 @@ extension AlbumDetailsViewController: AlbumDetailsViewProtocol{
     }
     
     func reloadTableView() {
-        albumDetailsTableView.reloadData()
+        DispatchQueue.main.async {
+            self.albumDetailsTableView.reloadData()
+        }
+    
     }
     
     func showIndecator() {

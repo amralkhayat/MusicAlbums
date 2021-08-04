@@ -11,7 +11,7 @@ import UIKit
 class AlbumsDetailsRouterrSpy: AlbumDetailsRouterProtocol {
     
     
-    static func AlbumsDetailsRouterVC(albumDetails: AlbumDetailsModel) -> UIViewController {
+    static func AlbumsDetailsRouterVC(albumConfiguration: AlbumConfiguratinModel) -> UIViewController {
         
         
         return UIViewController()

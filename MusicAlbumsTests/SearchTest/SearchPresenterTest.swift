@@ -90,7 +90,7 @@ class SearchPresenterTest: XCTestCase {
         XCTAssertEqual(error.localizedDescription,view.errorMessage, "Error message doesn't match")
 
     }
-    
+    //MARK:- TablView Methods Test
     func test_SearchPresnter_WhenSearchCalled_Succses_NumberofArtists(){
         
         // Given

@@ -41,6 +41,18 @@
 		DD58684F26B267B900729A6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD58684E26B267B900729A6A /* Assets.xcassets */; };
 		DD58685226B267B900729A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD58685026B267B900729A6A /* LaunchScreen.storyboard */; };
 		DD6296CF26B940AF003CB04D /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6296CE26B940AF003CB04D /* Int+Extension.swift */; };
+		DD7940BC26BA0229008F2A4E /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940BB26BA0229008F2A4E /* MainScreenInteractor.swift */; };
+		DD7940C026BA029E008F2A4E /* MianScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940BF26BA029E008F2A4E /* MianScreenRouter.swift */; };
+		DD7940C326BA02E3008F2A4E /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940C226BA02E3008F2A4E /* MainScreenPresenter.swift */; };
+		DD7940C826BA0533008F2A4E /* MainScreenInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940C726BA0533008F2A4E /* MainScreenInteractorSpy.swift */; };
+		DD7940CA26BA0549008F2A4E /* MainScreenRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940C926BA0549008F2A4E /* MainScreenRouterSpy.swift */; };
+		DD7940CC26BA0565008F2A4E /* MainScreenViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940CB26BA0565008F2A4E /* MainScreenViewSpy.swift */; };
+		DD7940CE26BA0589008F2A4E /* MainScreenViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940CD26BA0589008F2A4E /* MainScreenViewControllerTest.swift */; };
+		DD7940D026BA05CD008F2A4E /* MainScreenPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940CF26BA05CD008F2A4E /* MainScreenPresenterTest.swift */; };
+		DD7940D226BA8894008F2A4E /* MainScreenDelegateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940D126BA8894008F2A4E /* MainScreenDelegateMethods.swift */; };
+		DD7940D526BA9470008F2A4E /* LocalAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940D326BA9470008F2A4E /* LocalAlbumCell.swift */; };
+		DD7940D626BA9470008F2A4E /* LocalAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7940D426BA9470008F2A4E /* LocalAlbumCell.xib */; };
+		DD7940D826BA9499008F2A4E /* LocalAlbumCellSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940D726BA9499008F2A4E /* LocalAlbumCellSpy.swift */; };
 		DD86AD2326B832B600B1C20C /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = DD86AD2226B832B600B1C20C /* data.json */; };
 		DD86AD2626B832EA00B1C20C /* AlbumInfoModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86AD2526B832EA00B1C20C /* AlbumInfoModelTest.swift */; };
 		DDA0981426B3DF01007F3431 /* CustomPlaceholder.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA0981326B3DF01007F3431 /* CustomPlaceholder.xib */; };
@@ -77,8 +89,6 @@
 		DDDA196126B2C50500A1CC1B /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDDA195F26B2C50500A1CC1B /* Search.xib */; };
 		DDDA196426B2C51600A1CC1B /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA196226B2C51600A1CC1B /* Albums.swift */; };
 		DDDA196526B2C51600A1CC1B /* Albums.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDDA196326B2C51600A1CC1B /* Albums.xib */; };
-		DDDA196826B2C53100A1CC1B /* AlbumDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA196626B2C53100A1CC1B /* AlbumDetails.swift */; };
-		DDDA196926B2C53100A1CC1B /* AlbumDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDDA196726B2C53100A1CC1B /* AlbumDetails.xib */; };
 		DDDA196C26B2C93600A1CC1B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDA196B26B2C93600A1CC1B /* Colors.xcassets */; };
 		DDDA196E26B2CBC600A1CC1B /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA196D26B2CBC600A1CC1B /* DesignSystem.swift */; };
 		DDDA197026B2CBDD00A1CC1B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA196F26B2CBDD00A1CC1B /* Colors.swift */; };
@@ -145,6 +155,18 @@
 		DD58685826B267B900729A6A /* MusicAlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicAlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD58685E26B267B900729A6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD6296CE26B940AF003CB04D /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		DD7940BB26BA0229008F2A4E /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
+		DD7940BF26BA029E008F2A4E /* MianScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianScreenRouter.swift; sourceTree = "<group>"; };
+		DD7940C226BA02E3008F2A4E /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		DD7940C726BA0533008F2A4E /* MainScreenInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractorSpy.swift; sourceTree = "<group>"; };
+		DD7940C926BA0549008F2A4E /* MainScreenRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouterSpy.swift; sourceTree = "<group>"; };
+		DD7940CB26BA0565008F2A4E /* MainScreenViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewSpy.swift; sourceTree = "<group>"; };
+		DD7940CD26BA0589008F2A4E /* MainScreenViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewControllerTest.swift; sourceTree = "<group>"; };
+		DD7940CF26BA05CD008F2A4E /* MainScreenPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenterTest.swift; sourceTree = "<group>"; };
+		DD7940D126BA8894008F2A4E /* MainScreenDelegateMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenDelegateMethods.swift; sourceTree = "<group>"; };
+		DD7940D326BA9470008F2A4E /* LocalAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAlbumCell.swift; sourceTree = "<group>"; };
+		DD7940D426BA9470008F2A4E /* LocalAlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalAlbumCell.xib; sourceTree = "<group>"; };
+		DD7940D726BA9499008F2A4E /* LocalAlbumCellSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAlbumCellSpy.swift; sourceTree = "<group>"; };
 		DD86AD2226B832B600B1C20C /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		DD86AD2526B832EA00B1C20C /* AlbumInfoModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoModelTest.swift; sourceTree = "<group>"; };
 		DDA0981326B3DF01007F3431 /* CustomPlaceholder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPlaceholder.xib; sourceTree = "<group>"; };
@@ -181,8 +203,6 @@
 		DDDA195F26B2C50500A1CC1B /* Search.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Search.xib; sourceTree = "<group>"; };
 		DDDA196226B2C51600A1CC1B /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 		DDDA196326B2C51600A1CC1B /* Albums.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Albums.xib; sourceTree = "<group>"; };
-		DDDA196626B2C53100A1CC1B /* AlbumDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetails.swift; sourceTree = "<group>"; };
-		DDDA196726B2C53100A1CC1B /* AlbumDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumDetails.xib; sourceTree = "<group>"; };
 		DDDA196B26B2C93600A1CC1B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		DDDA196D26B2CBC600A1CC1B /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		DDDA196F26B2CBDD00A1CC1B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -453,12 +473,70 @@
 				DD86AD2426B832C700B1C20C /* TestModel */,
 				DD43DCDC26B33109006E9979 /* Helper */,
 				DD43DCD626B3270F006E9979 /* DataTest */,
+				DD7940C526BA04DC008F2A4E /* MainScreenTest */,
 				DDA0982026B447A1007F3431 /* SearchTest */,
 				DD06969F26B5377A003B6712 /* AlbumsTest */,
 				DDD9D00426B5D6F800502428 /* AlbumsDetailsTest */,
 				DD58685E26B267B900729A6A /* Info.plist */,
 			);
 			path = MusicAlbumsTests;
+			sourceTree = "<group>";
+		};
+		DD7940BD26BA022F008F2A4E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				DD7940BB26BA0229008F2A4E /* MainScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		DD7940BE26BA028C008F2A4E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DD7940BF26BA029E008F2A4E /* MianScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		DD7940C126BA02C9008F2A4E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DD7940C226BA02E3008F2A4E /* MainScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DD7940C426BA030D008F2A4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDDA195A26B2C4E800A1CC1B /* MainScreen.swift */,
+				DDDA195B26B2C4E800A1CC1B /* MainScreen.xib */,
+				DD7940D126BA8894008F2A4E /* MainScreenDelegateMethods.swift */,
+				DD7940D326BA9470008F2A4E /* LocalAlbumCell.swift */,
+				DD7940D426BA9470008F2A4E /* LocalAlbumCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD7940C526BA04DC008F2A4E /* MainScreenTest */ = {
+			isa = PBXGroup;
+			children = (
+				DD7940C626BA04F9008F2A4E /* MainScreenSpies */,
+				DD7940CD26BA0589008F2A4E /* MainScreenViewControllerTest.swift */,
+				DD7940CF26BA05CD008F2A4E /* MainScreenPresenterTest.swift */,
+			);
+			path = MainScreenTest;
+			sourceTree = "<group>";
+		};
+		DD7940C626BA04F9008F2A4E /* MainScreenSpies */ = {
+			isa = PBXGroup;
+			children = (
+				DD7940C726BA0533008F2A4E /* MainScreenInteractorSpy.swift */,
+				DD7940C926BA0549008F2A4E /* MainScreenRouterSpy.swift */,
+				DD7940CB26BA0565008F2A4E /* MainScreenViewSpy.swift */,
+				DD7940D726BA9499008F2A4E /* LocalAlbumCellSpy.swift */,
+			);
+			path = MainScreenSpies;
 			sourceTree = "<group>";
 		};
 		DD86AD2426B832C700B1C20C /* TestModel */ = {
@@ -533,8 +611,6 @@
 			isa = PBXGroup;
 			children = (
 				DDD9D01226B67F4C00502428 /* cell */,
-				DDDA196726B2C53100A1CC1B /* AlbumDetails.xib */,
-				DDDA196626B2C53100A1CC1B /* AlbumDetails.swift */,
 				DDCE563926B7C918007B8F62 /* AlbumDetailsViewController.swift */,
 				DDCE563A26B7C918007B8F62 /* AlbumDetailsViewController.xib */,
 			);
@@ -650,8 +726,10 @@
 		DDDA195626B2C45500A1CC1B /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				DDDA195A26B2C4E800A1CC1B /* MainScreen.swift */,
-				DDDA195B26B2C4E800A1CC1B /* MainScreen.xib */,
+				DD7940BE26BA028C008F2A4E /* Router */,
+				DD7940BD26BA022F008F2A4E /* Interactor */,
+				DD7940C126BA02C9008F2A4E /* Presenter */,
+				DD7940C426BA030D008F2A4E /* View */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -812,11 +890,11 @@
 				DD0696AC26B543D2003B6712 /* AlbumCell.xib in Resources */,
 				DD0696A526B53FC3003B6712 /* AlbumView.xib in Resources */,
 				DDDA195D26B2C4E800A1CC1B /* MainScreen.xib in Resources */,
-				DDDA196926B2C53100A1CC1B /* AlbumDetails.xib in Resources */,
 				DDD9D00B26B676A600502428 /* TrackCell.xib in Resources */,
 				DD58685226B267B900729A6A /* LaunchScreen.storyboard in Resources */,
 				DD58684F26B267B900729A6A /* Assets.xcassets in Resources */,
 				DDD9D01126B67ADC00502428 /* AlbumDetailsHeaderCell.xib in Resources */,
+				DD7940D626BA9470008F2A4E /* LocalAlbumCell.xib in Resources */,
 				DDDA196126B2C50500A1CC1B /* Search.xib in Resources */,
 				DDDA196526B2C51600A1CC1B /* Albums.xib in Resources */,
 				DDDA197626B2E34000A1CC1B /* ArtistCell.xib in Resources */,
@@ -919,12 +997,12 @@
 				DDEA309326B6C75700329C69 /* RealmManager.swift in Sources */,
 				DDA0981626B3DF72007F3431 /* CustomPlaceholder.swift in Sources */,
 				DD0696AE26B54651003B6712 /* UICollectionView+Extension.swift in Sources */,
+				DD7940D226BA8894008F2A4E /* MainScreenDelegateMethods.swift in Sources */,
 				DD0696A726B53FD0003B6712 /* AlbumView.swift in Sources */,
 				DD43DCCB26B30F67006E9979 /* UrlRequestBuilder.swift in Sources */,
 				DDA0982D26B47ABD007F3431 /* UIViewController+Extension.swift in Sources */,
 				DD43DCC326B2FFF9006E9979 /* SearchInteractor.swift in Sources */,
 				DD43DCD526B31F51006E9979 /* SearchDelegateMethods.swift in Sources */,
-				DDDA196826B2C53100A1CC1B /* AlbumDetails.swift in Sources */,
 				DD0696AB26B543D2003B6712 /* AlbumCell.swift in Sources */,
 				DD43DCC126B2FF78006E9979 /* SearchRouter.swift in Sources */,
 				DDCE563B26B7C918007B8F62 /* AlbumDetailsViewController.swift in Sources */,
@@ -935,13 +1013,17 @@
 				DDD9D01426B689A700502428 /* AlbumDetailsModel.swift in Sources */,
 				DDDA197026B2CBDD00A1CC1B /* Colors.swift in Sources */,
 				DDDA195C26B2C4E800A1CC1B /* MainScreen.swift in Sources */,
+				DD7940D526BA9470008F2A4E /* LocalAlbumCell.swift in Sources */,
+				DD7940C026BA029E008F2A4E /* MianScreenRouter.swift in Sources */,
 				DD43DCD326B314E1006E9979 /* ArtistAPI.swift in Sources */,
 				DDDA196026B2C50500A1CC1B /* Search.swift in Sources */,
 				DDA0981F26B428F4007F3431 /* UIImageView+Extension.swift in Sources */,
+				DD7940BC26BA0229008F2A4E /* MainScreenInteractor.swift in Sources */,
 				DDD9D01B26B68BC400502428 /* AlbumDetailsRouter.swift in Sources */,
 				DD0696B426B5789A003B6712 /* AlbumsInteractror.swift in Sources */,
 				DDDA197A26B2E3D900A1CC1B /* UIView+Extension.swift in Sources */,
 				DD43DCC626B30E13006E9979 /* AritistModel.swift in Sources */,
+				DD7940C326BA02E3008F2A4E /* MainScreenPresenter.swift in Sources */,
 				DDCE563E26B7CB8F007B8F62 /* StretchyHeaderView.swift in Sources */,
 				DD58684626B267B600729A6A /* AppDelegate.swift in Sources */,
 				DDD9D01D26B68BFC00502428 /* AlbumDetailsPresenter.swift in Sources */,
@@ -955,6 +1037,7 @@
 			files = (
 				DD0696BB26B57B22003B6712 /* AlbumsInteractorSpy.swift in Sources */,
 				DDD9D02A26B69BAC00502428 /* AlbumDetailsCellSpy.swift in Sources */,
+				DD7940CA26BA0549008F2A4E /* MainScreenRouterSpy.swift in Sources */,
 				DD0696C326B58A42003B6712 /* AlbumModelTest.swift in Sources */,
 				DD43DCD926B32742006E9979 /* MockURLSession.swift in Sources */,
 				DD0696C526B5997D003B6712 /* AlbumsCellSpy.swift in Sources */,
@@ -966,15 +1049,20 @@
 				DDD9D02026B691D500502428 /* AlbumsDetailsInteractorSpy.swift in Sources */,
 				DDA0982B26B475B8007F3431 /* AritistCellSpy.swift in Sources */,
 				DDD9D02626B6934600502428 /* AlnumsDetailsPresenterTest.swift in Sources */,
+				DD7940C826BA0533008F2A4E /* MainScreenInteractorSpy.swift in Sources */,
 				DD0696BD26B57B9A003B6712 /* AlbumsViewSpy.swift in Sources */,
 				DDD9D00626B5D72C00502428 /* AlbumsDetailsViewControllerTest.swift in Sources */,
+				DD7940D026BA05CD008F2A4E /* MainScreenPresenterTest.swift in Sources */,
 				DDD9D02426B6928A00502428 /*  AlbumsDetailsViewSpy.swift in Sources */,
 				DD0696A126B537A7003B6712 /* AlbumsViewControllerTest.swift in Sources */,
 				DDA0982226B44830007F3431 /* SearchPresenterTest.swift in Sources */,
 				DDD9D02826B694E300502428 /* AlbumDetailsModelTest.swift in Sources */,
+				DD7940CE26BA0589008F2A4E /* MainScreenViewControllerTest.swift in Sources */,
 				DD0696B926B57A82003B6712 /* AlbumsPresenterTest.swift in Sources */,
 				DDEA309626B6CAE400329C69 /* RealmManagerTest.swift in Sources */,
 				DDA0982526B44949007F3431 /* SearchInteractortSpy.swift in Sources */,
+				DD7940D826BA9499008F2A4E /* LocalAlbumCellSpy.swift in Sources */,
+				DD7940CC26BA0565008F2A4E /* MainScreenViewSpy.swift in Sources */,
 				DD43DCDB26B3277E006E9979 /* APIManagerTest.swift in Sources */,
 				DDA0982726B44964007F3431 /* SearchRouterSpy.swift in Sources */,
 			);

@@ -72,7 +72,7 @@ class AlbumsPresenterTest: XCTestCase {
 
     }
     
-    
+   //MARK:- Table view methods test
     func test_AlbumPresnter_WhenViewDidLoad_Succses_NumberoAlbums(){
         // Given
           let expectedAritists = 3

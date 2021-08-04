@@ -9,7 +9,7 @@ import Alamofire
 enum ArtistRequest: UrlRequestBuilder{
     case getArtistSearched(_ artist:String , _ page: Int)
     case getAlbums(_ artistId:String , _ page: Int)
-    case getAlbumInfo(_ artistName:String,_ albumId:String)
+    case getAlbumInfo(_ artistName:String,_ albumName:String)
     var path: String {
         switch self {
         case .getArtistSearched:
@@ -41,10 +41,10 @@ enum ArtistRequest: UrlRequestBuilder{
                       "api_key": "559a4f1117f89ea9a53e97504b0729ae",
                      "page": page,
                      "format": "json"]
-        case .getAlbumInfo( let artistName, let albumId):
+        case .getAlbumInfo( let artistName, let albumName):
          return   ["method": "album.getinfo",
                      "artist":artistName,
-                     "mbid": albumId,
+                     "album": albumName,
                      "api_key": "559a4f1117f89ea9a53e97504b0729ae",
                     "format": "json"]
         }

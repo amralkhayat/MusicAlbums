@@ -8,7 +8,7 @@
 import UIKit
 protocol AlbumsRouterProtocol {
     static func AlbumsRouterVC(artistId:String) -> UIViewController
-    func routeToAlbumsDetails(From view:  AlbumsViewProtocol, albumDeatils: AlbumDetailsModel)
+    func routeToAlbumsDetails(From view:  AlbumsViewProtocol, albumConfiguration: AlbumConfiguratinModel)
 }
 
 class AbumsRouter: AlbumsRouterProtocol {
@@ -24,8 +24,8 @@ class AbumsRouter: AlbumsRouterProtocol {
     }
     
     
-    func routeToAlbumsDetails(From view:  AlbumsViewProtocol, albumDeatils: AlbumDetailsModel) {
-        let ToAlbumDetailsScreen =  AlbumDetailsRouter.AlbumsDetailsRouterVC(albumDetails: albumDeatils)
+    func routeToAlbumsDetails(From view:  AlbumsViewProtocol, albumConfiguration: AlbumConfiguratinModel) {
+        let ToAlbumDetailsScreen =  AlbumDetailsRouter.AlbumsDetailsRouterVC(albumConfiguration: albumConfiguration)
         if let viewController = view as? UIViewController {
             DispatchQueue.main.async {
          viewController.navigationController?.pushViewController(ToAlbumDetailsScreen , animated: true)

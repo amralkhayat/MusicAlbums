@@ -17,18 +17,20 @@ protocol AlbumDetailsViewProtocol: AnyObject{
 
 protocol AlbumDetailsPresnter{
     func viewdidLoad()
-    func writeObject(album:AlbumInfo)
-    func deleteObject(album:AlbumInfo)
+    func writeObject(album:AlbumData)
+    func deleteObject(album:AlbumData)
     func readObject(primaryKey: String)
     func populateAlbumInfoFromApiRequest()
     func populateAlbumInfo()
     var numberTracks: Int {get}
+    func downloadAndDelete() -> Bool
 }
 
 
 
 protocol HeaderCellView {
-    func displayCellBody(albumDetails: AlbumInfo)
+    func displayCellBody(albumDetails: AlbumData)
+    func albumIsDownloaded (status:Bool)
 }
 
 protocol TracksCellView {
@@ -37,47 +39,50 @@ protocol TracksCellView {
 
 
 class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
-   
+ 
+    
+
     //MARK:- Properties
     weak var view: AlbumDetailsViewProtocol?
     var interactor: AlbumDetailsInteractorProtocol
     var router: AlbumDetailsRouterProtocol
-    var albumInfo:AlbumInfo?
-    var albumDetails: AlbumDetailsModel
-    init( view: AlbumDetailsViewProtocol,interactor: AlbumDetailsInteractorProtocol,router: AlbumDetailsRouterProtocol, albumDetailsModel:AlbumDetailsModel) {
+    var albumInfo:AlbumData?
+    var albumConfiguration: AlbumConfiguratinModel
+    var isDownloaded = false
+    init( view: AlbumDetailsViewProtocol,interactor: AlbumDetailsInteractorProtocol,router: AlbumDetailsRouterProtocol, albumConfiguration: AlbumConfiguratinModel) {
         self.view =  view
         self.interactor = interactor
         self.router = router
-        self.albumDetails = albumDetailsModel
+        self.albumConfiguration = albumConfiguration
     }
     
  
     func viewdidLoad() {
         populateAlbumInfo()
     }
-    
+   
+    // check if object is exist download form local stroage or from server
     func populateAlbumInfo() {
-        if interactor.AlbumExists(primaryKey: albumDetails.albumName ?? "") == true{
-            
-            readObject(primaryKey:  albumDetails.albumName ?? "")
+       
+        if interactor.AlbumExists(primaryKey: albumConfiguration.albumName ){
+            self.readObject(primaryKey:  self.albumConfiguration.albumName )
+            isDownloaded = true
         }else {
         populateAlbumInfoFromApiRequest()
-
+            isDownloaded = false
         }
-        
-        
     }
-
     
     // save album to the local data storage
-    func writeObject(album:AlbumInfo){
+    func writeObject(album:AlbumData){
         self.view?.showIndecator()
-        interactor.saveObject(album: albumInfo ?? AlbumInfo()) { [weak self] respones in
+        interactor.saveObject(album: album) { [weak self] respones in
             guard let self = self else {return}
             switch respones {
             case .success(let message):
                 guard let message = message else {return}
                 self.view?.show(message)
+                self.isDownloaded = true
                 self.view?.hideIndecator()
             case .failure(let error):
                 self.view?.show(error.localizedDescription)
@@ -87,15 +92,16 @@ class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
     }
     
     // Delete album from the local data storage
-    func deleteObject(album:AlbumInfo){
+    func deleteObject(album:AlbumData){
         self.view?.showIndecator()
-        interactor.deleteObject(album: albumInfo ?? AlbumInfo()) {  [weak self] respones in
+        interactor.deleteObject(album: album ) {  [weak self] respones in
                 guard let self = self else {return}
                 switch respones {
                 case .success(let message):
                     guard let message = message else {return}
                     self.view?.show(message)
                     self.view?.hideIndecator()
+                    self.isDownloaded = false
                 case .failure(let error):
                     self.view?.show(error.localizedDescription)
                     self.view?.hideIndecator()
@@ -109,7 +115,8 @@ class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
              switch respones {
              case .success(let data):
                 self.view?.hideIndecator()
-                self.albumInfo =  data
+                    self.albumInfo =  data
+                self.view?.showAlbumImage(url: self.albumInfo?.image[2].text ?? "")
                 self.view?.reloadTableView()
              case .failure(let error):
                  self.view?.show(error.localizedDescription)
@@ -120,13 +127,13 @@ class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
     // populate Album Info from request API
     func populateAlbumInfoFromApiRequest() {
         self.view?.showIndecator()
-        interactor.getAlbumInfo(artistName: albumDetails.artistName ?? "", albumId: albumDetails.albumId) { [weak self ] respones in
+        interactor.getAlbumInfo(artistName: albumConfiguration.artistName , albumName: albumConfiguration.albumName) { [weak self ] respones in
             guard let self = self else {return}
             switch respones {
             case .success(let data):
                 self.view?.hideIndecator()
-                self.albumInfo = data
-                self.view?.showAlbumImage(url: self.albumInfo?.album?.image[2].text ?? "")
+                self.albumInfo = data?.album
+                self.view?.showAlbumImage(url: self.albumInfo?.image[2].text ?? "")
                 self.view?.reloadTableView()
             case .failure(let error):
                 self.view?.hideIndecator()
@@ -135,17 +142,33 @@ class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
         }
     }
     
+    func downloadAndDelete() -> Bool {
+        guard let object =  albumInfo else { return false}
+        if isDownloaded{
+            deleteObject(album: object)
+            isDownloaded = false
+            return isDownloaded
+        }else{
+            print(albumInfo ?? AlbumInfo())
+            writeObject(album:object)
+            isDownloaded = true
+            return isDownloaded
+        }
+    }
+    
+    
     var numberTracks: Int {
-        return albumInfo?.album?.tracks?.track.count ?? 0
+        return albumInfo?.tracks?.track.count ?? 0
     }
     //MARK:- TableViewMethods
     func configurationHeaderCell (cell:HeaderCellView) {
         guard let albumInfo = albumInfo else {return}
         cell.displayCellBody(albumDetails: albumInfo)
+        cell.albumIsDownloaded(status: isDownloaded)
      }
    
     func configurationTracksCellViewCell (cell:TracksCellView ,index: Int) {
-        guard let track = albumInfo?.album?.tracks?.track[index] else {return}
+        guard let track = albumInfo?.tracks?.track[index] else {return}
         cell.displayCellBody(tracks:  track )
    }
     

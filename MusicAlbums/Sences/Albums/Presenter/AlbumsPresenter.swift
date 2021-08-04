@@ -19,6 +19,8 @@ import Foundation
         func populateAlbums()
         func dataHandling(data:AlbumModel)
         var numberOfrow: Int {get}
+        func didSelect(item: Int)
+        func configurationArtistCell (cell:AlbumCellView, index: Int)
     }
    protocol AlbumCellView {
     func displayCellBody(album: Album)
@@ -82,13 +84,11 @@ class AlbumsVCPresenter: AlbumsPresenter {
     
     func didSelect(item: Int) {
         let album = album[item]
-        let albumDetails = AlbumDetailsModel()
-        albumDetails.albumName = album.name
-        albumDetails.albumImageUrl = album.image[2].text
-        albumDetails.albumId = album.mbid ?? ""
-        albumDetails.playAccount = album.playcount ?? 0
-        albumDetails.artistName = album.artist.name
-        router.routeToAlbumsDetails(From: self.view!, albumDeatils: albumDetails)
+        var albumConfiguration = AlbumConfiguratinModel()
+        albumConfiguration.artistName = album.artist.name ?? ""
+        albumConfiguration.albumName = album.name ?? ""
+        albumConfiguration.albumId = album.mbid ?? ""
+        router.routeToAlbumsDetails(From: self.view!, albumConfiguration:  albumConfiguration)
     }
     
     
