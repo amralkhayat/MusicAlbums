@@ -8,14 +8,17 @@
 import UIKit
 extension  MainScreen: MainScreenViewProtocol{
     func showPlacehoder(status: Bool, message: String) {
-        let placeholder = CustomPlaceholder()
-         placeholder.placeholderLabel.text = message
-     
-        if status{
-            mainScreenCollectionView.backgroundView =  placeholder
-        }else {
-            mainScreenCollectionView.backgroundView = nil
+        DispatchQueue.main.async {
+            let placeholder = CustomPlaceholder()
+             placeholder.placeholderLabel.text = message
+         
+            if status{
+                self.mainScreenCollectionView.backgroundView =  placeholder
+            }else {
+                self.mainScreenCollectionView.backgroundView = nil
+            }
         }
+    
     }
     
     func show(_ Message: String) {

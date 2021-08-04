@@ -24,6 +24,7 @@ import Foundation
     }
    protocol AlbumCellView {
     func displayCellBody(album: Album)
+    func hideDownloadedIcon(status: Bool)
    }
 
 class AlbumsVCPresenter: AlbumsPresenter {
@@ -33,6 +34,7 @@ class AlbumsVCPresenter: AlbumsPresenter {
     private var router: AlbumsRouterProtocol
     private var artistId: String
     private var currentPage = 1
+    private var isHiden = true
      var album = [Album]()
     init(view: AlbumsViewProtocol,interactor: AlbumsInteractorProtocol,
          router: AlbumsRouterProtocol, artistId: String) {
@@ -69,8 +71,6 @@ class AlbumsVCPresenter: AlbumsPresenter {
         self.view?.collectionViewReload()
     }
     
-    
-    
     //MARK:-  TableView Methods
     var numberOfrow: Int {
         return album.count
@@ -79,6 +79,7 @@ class AlbumsVCPresenter: AlbumsPresenter {
     // Configuration responsable to display Album data
      func configurationArtistCell (cell:AlbumCellView, index: Int) {
       cell.displayCellBody(album: album[index])
+        cell.hideDownloadedIcon(status: isHiden)
         
     }
     

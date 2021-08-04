@@ -57,6 +57,7 @@ class MainScreenVCPresenter: MainScreenPresenter {
             case .failure(let error):
                 self.view?.show(error.localizedDescription)
                 self.checkDataIsEmpty()
+                self.albumsData.removeAll()
                 self.view?.reloadCollectionView()
             }
         }

@@ -509,11 +509,10 @@
 		DD7940C426BA030D008F2A4E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD7940D926BACBFC008F2A4E /* Cell */,
 				DDDA195A26B2C4E800A1CC1B /* MainScreen.swift */,
 				DDDA195B26B2C4E800A1CC1B /* MainScreen.xib */,
 				DD7940D126BA8894008F2A4E /* MainScreenDelegateMethods.swift */,
-				DD7940D326BA9470008F2A4E /* LocalAlbumCell.swift */,
-				DD7940D426BA9470008F2A4E /* LocalAlbumCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,6 +536,15 @@
 				DD7940D726BA9499008F2A4E /* LocalAlbumCellSpy.swift */,
 			);
 			path = MainScreenSpies;
+			sourceTree = "<group>";
+		};
+		DD7940D926BACBFC008F2A4E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DD7940D326BA9470008F2A4E /* LocalAlbumCell.swift */,
+				DD7940D426BA9470008F2A4E /* LocalAlbumCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		DD86AD2426B832C700B1C20C /* TestModel */ = {

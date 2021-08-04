@@ -5,7 +5,7 @@
 //  Created by Amr Saeed on 31/07/2021.
 //
 
-import Foundation
+import RealmSwift
 protocol AlbumsInteractorProtocol {
     typealias CallResponse<T> = ((Result<T?, BaseError>) -> Void)
     func getSearchedArtist(artistId:String,page:Int,responseHandler: @escaping CallResponse<AlbumModel>)
@@ -14,6 +14,7 @@ protocol AlbumsInteractorProtocol {
 
 class AlbumsInteractor: AlbumsInteractorProtocol{
     let  apiManager = APIManager()
+    let realm =  RealmManager()
     func getSearchedArtist(artistId: String, page: Int, responseHandler: @escaping CallResponse<AlbumModel>) {
         apiManager.performRequest(AlbumModel.self, router: ArtistRequest.getAlbums(artistId, page)) { result   in
             switch result {
@@ -26,7 +27,5 @@ class AlbumsInteractor: AlbumsInteractorProtocol{
 
         }
     }
-    
-   
-    
+
 }

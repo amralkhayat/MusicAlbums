@@ -18,7 +18,7 @@ class TrackCell: UITableViewCell {
 extension TrackCell: TracksCellView {
     func displayCellBody(tracks: Track) {
         trackName.text = tracks.name
-        trackDuration.text =  tracks.duration?.calculateDuration()
+        trackDuration.text =  tracks.duration.calculateDuration()
     }
     
  

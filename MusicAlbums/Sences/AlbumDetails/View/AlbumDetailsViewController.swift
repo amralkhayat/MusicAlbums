@@ -120,15 +120,23 @@ extension AlbumDetailsViewController: AlbumDetailsViewProtocol{
     }
     
     func showIndecator() {
-        
+        DispatchQueue.main.async { [weak self ] in
+            guard let self = self else {return}
+            self.showSpinner(onView: self.view)
+        }
     }
     
     func hideIndecator() {
-        
+        DispatchQueue.main.async { [weak self ] in
+            guard let self = self else {return}
+            self.removeSpinner()
+        }
     }
     
     func show(_ Message: String) {
-        
+        self.presentAlert(withTitle: "", message: Message, actions: [:]) { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     

@@ -60,7 +60,7 @@ class MainScreen: UIViewController {
                                             style: .plain, target: self, action: #selector(searchTapped))
         searchBarItem.tintColor =  #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         navigationItem.rightBarButtonItem = searchBarItem
-        navigationItem.title =  "Albums"
+        navigationItem.title =  "Favorites Album"
 
     
     }

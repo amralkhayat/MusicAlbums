@@ -46,7 +46,7 @@ extension UIViewController {
        }
     
     
-    func presentAlert(withTitle title: String, message : String, actions : [String: UIAlertAction.Style], completionHandler: ((UIAlertAction) -> ())? = nil) {
+    func presentAlert(withTitle title: String, message : String, actions : [String: UIAlertAction.Style] , completionHandler: ((UIAlertAction) -> ())? = nil) {
 
            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
 

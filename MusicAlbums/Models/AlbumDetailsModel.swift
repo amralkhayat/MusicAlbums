@@ -105,7 +105,7 @@ import RealmSwift
 // MARK: - Track
 @objcMembers class Track: Object,Codable {
     dynamic var artist: ArtistInfo?
-    dynamic var duration: Int?
+    dynamic var duration: Int = 0
     dynamic var name: String?
 
     convenience  init(artist: ArtistInfo,duration: Int ,name: String) {
