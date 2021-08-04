@@ -11,20 +11,14 @@ extension  MainScreen: MainScreenViewProtocol{
         DispatchQueue.main.async {
             let placeholder = CustomPlaceholder()
              placeholder.placeholderLabel.text = message
-         
             if status{
                 self.mainScreenCollectionView.backgroundView =  placeholder
             }else {
                 self.mainScreenCollectionView.backgroundView = nil
             }
         }
-    
     }
-    
-    func show(_ Message: String) {
-      
-    }
-    
+
     func reloadCollectionView() {
         DispatchQueue.main.async { [weak self ] in
             guard let self = self else {return}

@@ -12,6 +12,7 @@ class AlbumCell: UICollectionViewCell {
     @IBOutlet weak var albumView: AlbumView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        albumView.downloadImageAlbum.isHidden = true
     }
 
 }
@@ -23,8 +24,6 @@ extension AlbumCell: AlbumCellView {
         albumView.albumArtist.text = album.artist.name
         albumView.albumImage.loadImage(album.image[2].text )
     }
-    func hideDownloadedIcon(status: Bool) {
-        albumView.downloadImageAlbum.isHidden = status
-    }
+ 
     
 }

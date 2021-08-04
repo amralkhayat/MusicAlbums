@@ -9,17 +9,17 @@ import UIKit
 protocol MainScreenRouterProtocol {
     static func mainScreenRouterVC (view: MainScreen)
     func routeToAlbumsDetails(From view: MainScreenViewProtocol, albumConfiguration: AlbumConfiguratinModel)
-    
 }
-class MainScreenRouter: MainScreenRouterProtocol {
 
+class MainScreenRouter: MainScreenRouterProtocol {
+       // Init View of the Main Screen
     static func mainScreenRouterVC(view: MainScreen) {
         let interactor =  MainScreenInteractor()
         let router = MainScreenRouter()
         let presenter =  MainScreenVCPresenter(view: view, interactor: interactor, router: router)
         view.presenter = presenter
     }
-    
+    //MARK:- Navgate to the Album details and pass albumConfiguration
     func routeToAlbumsDetails(From view: MainScreenViewProtocol, albumConfiguration: AlbumConfiguratinModel) {
         let ToAlbumDetailsScreen =  AlbumDetailsRouter.AlbumsDetailsRouterVC(albumConfiguration: albumConfiguration)
         if let viewController = view as? UIViewController {

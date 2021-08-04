@@ -53,6 +53,7 @@
 		DD7940D526BA9470008F2A4E /* LocalAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940D326BA9470008F2A4E /* LocalAlbumCell.swift */; };
 		DD7940D626BA9470008F2A4E /* LocalAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7940D426BA9470008F2A4E /* LocalAlbumCell.xib */; };
 		DD7940D826BA9499008F2A4E /* LocalAlbumCellSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940D726BA9499008F2A4E /* LocalAlbumCellSpy.swift */; };
+		DD7940DE26BB380E008F2A4E /* InteractorBaseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7940DD26BB380E008F2A4E /* InteractorBaseWireFrame.swift */; };
 		DD86AD2326B832B600B1C20C /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = DD86AD2226B832B600B1C20C /* data.json */; };
 		DD86AD2626B832EA00B1C20C /* AlbumInfoModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86AD2526B832EA00B1C20C /* AlbumInfoModelTest.swift */; };
 		DDA0981426B3DF01007F3431 /* CustomPlaceholder.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA0981326B3DF01007F3431 /* CustomPlaceholder.xib */; };
@@ -167,6 +168,7 @@
 		DD7940D326BA9470008F2A4E /* LocalAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAlbumCell.swift; sourceTree = "<group>"; };
 		DD7940D426BA9470008F2A4E /* LocalAlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalAlbumCell.xib; sourceTree = "<group>"; };
 		DD7940D726BA9499008F2A4E /* LocalAlbumCellSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAlbumCellSpy.swift; sourceTree = "<group>"; };
+		DD7940DD26BB380E008F2A4E /* InteractorBaseWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorBaseWireFrame.swift; sourceTree = "<group>"; };
 		DD86AD2226B832B600B1C20C /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		DD86AD2526B832EA00B1C20C /* AlbumInfoModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoModelTest.swift; sourceTree = "<group>"; };
 		DDA0981326B3DF01007F3431 /* CustomPlaceholder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPlaceholder.xib; sourceTree = "<group>"; };
@@ -470,7 +472,6 @@
 		DD58685B26B267B900729A6A /* MusicAlbumsTests */ = {
 			isa = PBXGroup;
 			children = (
-				DD86AD2426B832C700B1C20C /* TestModel */,
 				DD43DCDC26B33109006E9979 /* Helper */,
 				DD43DCD626B3270F006E9979 /* DataTest */,
 				DD7940C526BA04DC008F2A4E /* MainScreenTest */,
@@ -511,8 +512,8 @@
 			children = (
 				DD7940D926BACBFC008F2A4E /* Cell */,
 				DDDA195A26B2C4E800A1CC1B /* MainScreen.swift */,
-				DDDA195B26B2C4E800A1CC1B /* MainScreen.xib */,
 				DD7940D126BA8894008F2A4E /* MainScreenDelegateMethods.swift */,
+				DDDA195B26B2C4E800A1CC1B /* MainScreen.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -545,14 +546,6 @@
 				DD7940D426BA9470008F2A4E /* LocalAlbumCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		DD86AD2426B832C700B1C20C /* TestModel */ = {
-			isa = PBXGroup;
-			children = (
-				DD86AD2526B832EA00B1C20C /* AlbumInfoModelTest.swift */,
-			);
-			path = TestModel;
 			sourceTree = "<group>";
 		};
 		DDA0981226B3DEC3007F3431 /* Views */ = {
@@ -609,6 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				DDD9D01E26B691A900502428 /* AlbumsDetailsSpies */,
+				DD86AD2526B832EA00B1C20C /* AlbumInfoModelTest.swift */,
 				DDD9D00526B5D72C00502428 /* AlbumsDetailsViewControllerTest.swift */,
 				DDD9D02526B6934600502428 /* AlnumsDetailsPresenterTest.swift */,
 			);
@@ -677,6 +671,7 @@
 				DDDA195526B2C42F00A1CC1B /* DesignSystem */,
 				DDA0981226B3DEC3007F3431 /* Views */,
 				DD58684526B267B600729A6A /* AppDelegate.swift */,
+				DD7940DD26BB380E008F2A4E /* InteractorBaseWireFrame.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -997,6 +992,7 @@
 				DD0696C726B59D70003B6712 /* AlbumsDelegationMethods.swift in Sources */,
 				DD0696B726B578E5003B6712 /* AlbumsRouter.swift in Sources */,
 				DDD9D01926B68B8100502428 /* AlbumDetailsInteractor.swift in Sources */,
+				DD7940DE26BB380E008F2A4E /* InteractorBaseWireFrame.swift in Sources */,
 				DD43DCCD26B31031006E9979 /* NetworkRequestError.swift in Sources */,
 				DDDA196E26B2CBC600A1CC1B /* DesignSystem.swift in Sources */,
 				DDA0981826B3DFA7007F3431 /* NibLoadingView.swift in Sources */,

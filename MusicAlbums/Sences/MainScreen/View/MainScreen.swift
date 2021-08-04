@@ -34,6 +34,8 @@ class MainScreen: UIViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }()
     
+  
+    
     //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,7 @@ class MainScreen: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navifationBarConfig()
 
     }
 
@@ -51,18 +53,15 @@ class MainScreen: UIViewController {
     private func configurationUI(){
         mainScreenCollectionView.collectionViewLayout =  layout
         MainScreenRouter.mainScreenRouterVC(view: self)
-        navifationBarConfig()
     }
     
     private func navifationBarConfig(){
-        
         let searchBarItem =  UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"),
                                             style: .plain, target: self, action: #selector(searchTapped))
         searchBarItem.tintColor =  #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = searchBarItem
         navigationItem.title =  "Favorites Album"
-
-    
     }
 
     //MARK:- Selector
@@ -71,6 +70,8 @@ class MainScreen: UIViewController {
         navigationController?.pushViewController(searchViewController, animated: true)
     }
 }
+
+//MARK:- Collection view Methods
 extension MainScreen: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.didSelect(item: indexPath.item)

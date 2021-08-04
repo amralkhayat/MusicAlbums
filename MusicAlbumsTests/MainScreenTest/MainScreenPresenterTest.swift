@@ -24,6 +24,7 @@ class MainScreenPresenterTest: XCTestCase {
         super.tearDown()
     }
     
+
     func test_MainScreenPresnter_WhenViewCheckDataIsEmpty_ShouldShowMessage(){
        // Given
          let expectedmessage = "Empty Albums🤭"
@@ -49,16 +50,6 @@ class MainScreenPresenterTest: XCTestCase {
         XCTAssertEqual(view.isReloadCollectionView , expectedStatus )
     }
 
-    func test_MainScreenPresnter_WhenViewDidLoad_readObjects_Failure_ShouldReloadCollection(){
-       // Given
-        let expectedError = RuntimeError.NoRealmSet("Data can not retrieve")
-        Interactor.resultToBeReturned = .failure(expectedError)
-          // When
-        sut.viewDidLoad()
-         // Then
-        XCTAssertEqual(view.showMessage, expectedError.localizedDescription )
-    }
-    
     //MARK: TableView Test Methods
     
     func test_MainScreenPresnter_WhenViewDidLoad_Succses_NumberofAlbums(){

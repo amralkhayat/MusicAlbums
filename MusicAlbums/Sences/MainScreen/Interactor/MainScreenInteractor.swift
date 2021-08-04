@@ -13,12 +13,10 @@ protocol MainScreenInteractorProtocol {
 }
 
 
-class MainScreenInteractor: MainScreenInteractorProtocol{
-    let realm =  RealmManager()
+class MainScreenInteractor: InteractorBaseWireFrame, MainScreenInteractorProtocol {
+     // Read All objects from Local storage 
     func readObject(responseHandler: @escaping CallResponse<[AlbumData]>) {
-     
        let data =  realm.readObjects(AlbumData.self)
-        
         if  data.count != 0{
             responseHandler(.success(data))
         }else{

@@ -8,6 +8,10 @@
 import Foundation
 @testable import MusicAlbums
 class AlbumsCellSpy: AlbumCellView {
+  
+    
+  
+    
     var albumName = ""
     var artistName = ""
     var albumUrlImage = ""

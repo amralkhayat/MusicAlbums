@@ -13,8 +13,8 @@ class LocalAlbumCell: UICollectionViewCell {
         super.awakeFromNib()
         self.backgroundColor = .clear
     }
-
 }
+
 extension LocalAlbumCell: LocalAlbumCellView{
     func displayCellBody(album: AlbumData) {
         albumView.albumArtist.text =  album.artist

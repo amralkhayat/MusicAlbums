@@ -84,8 +84,9 @@ class SearchVCPresenter: SearchPresenter {
          if artists.isEmpty {
          self.view?.showPlacehoder(status: true, message: "The artist you have searched for not available 😔")
           }
-        self.view?.tableviewReload()
         currentPage += 1
+        self.view?.tableviewReload()
+       
     }
 
     
@@ -101,7 +102,7 @@ class SearchVCPresenter: SearchPresenter {
     }
     
     func didselectCell(index: Int) {
-        router.routeToAlbums(From: self.view!, artistId: artists[index].mbid)
+        router.routeToAlbums(From: self.view!, artistName: artists[index].name)
     }
     
     //MARK:- Prefetch data

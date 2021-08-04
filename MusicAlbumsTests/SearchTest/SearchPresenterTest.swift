@@ -26,6 +26,7 @@ class SearchPresenterTest: XCTestCase {
     }
     
     //MARK:- Tests
+    //MARK:- Search Tests
     func test_SearchPresenter_WhenLoadView_ShouldShowCustomPlaceholder(){
         // Given
         let expected =  true
@@ -63,19 +64,20 @@ class SearchPresenterTest: XCTestCase {
         XCTAssertEqual(view.placeHolderMessage, expectedMessage ,"Message not match" )
     }
     
-    func test_SearchPresnter_WhenSearch_Succses_ShouldRelaodTableView(){
+    func test_SearchPresnter_WhenSearchCalled_Succses_AndArtistNotFound(){
         
      // Given
-        let artistsToBeReturned = ArtistModel.createAritist()
-        Interactor.resultToBeReturned = .success(artistsToBeReturned)
+        let error = BaseError.serverConnection
+        Interactor.resultToBeReturned = .failure(error)
 
         //When
         sut.search(artist: "justinbieber")
         
         // Then
-        
-        XCTAssertTrue(view.tableViewRelaodIsCalled)
+        XCTAssertEqual(error.localizedDescription,view.errorMessage, "Error message doesn't match")
+
     }
+    
 
     func test_SearchPresnter_WhenSearchCalled_Failure_displayArtistRetrievalError(){
         
@@ -90,6 +92,8 @@ class SearchPresenterTest: XCTestCase {
         XCTAssertEqual(error.localizedDescription,view.errorMessage, "Error message doesn't match")
 
     }
+
+
     //MARK:- TablView Methods Test
     func test_SearchPresnter_WhenSearchCalled_Succses_NumberofArtists(){
         

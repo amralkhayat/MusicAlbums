@@ -23,7 +23,7 @@ class Search: UIViewController {
     //MARK:- Properties
     var presenter:SearchVCPresenter?
     let searchController :UISearchController = {
-     let searchCont =  UISearchController()
+    let searchCont =  UISearchController()
         searchCont.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         searchCont.searchBar.searchTextField.leftView?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         searchCont.searchBar.barTintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -36,29 +36,33 @@ class Search: UIViewController {
         searchCont.definesPresentationContext = true
     return searchCont
     }()
+    
     //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configurationUI()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string:"Search", attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        searchController.searchBar.text = nil
     }
     //MARK:- Helper
     private func configurationUI(){
         navigationItem.searchController =  searchController
         navigationItem.title = "Search"
         SearchRouter.searchRouterVC(view: self)
+        presenter?.viewDidLoad()
+        searchBarProperties()
+    }
+    private func searchBarProperties(){
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
-        presenter?.viewDidLoad()
+        searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string:"Search", attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
-    //MARK:- Selector
 }
 //MARK:- Search Methods
 extension Search: UISearchResultsUpdating, UISearchBarDelegate {
@@ -80,7 +84,7 @@ extension Search: UITableViewDataSource {
         return cell
     }
 
-}
+ }
 extension Search: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didselectCell(index: indexPath.row)

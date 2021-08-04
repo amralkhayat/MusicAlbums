@@ -9,12 +9,10 @@ import Foundation
 @testable import MusicAlbums
 class MainScreenRouterSpy: MainScreenRouterProtocol{
     var isRouteToAlbumsDetailsCalled = false
-    static func mainScreenRouterVC(view: MainScreen) {
-        
-    }
-    
+    static func mainScreenRouterVC(view: MainScreen) {}
+
     func routeToAlbumsDetails(From view: MainScreenViewProtocol, albumConfiguration: AlbumConfiguratinModel) {
         isRouteToAlbumsDetailsCalled = true
-        
+       
     }
 }

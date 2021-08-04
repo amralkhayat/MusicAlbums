@@ -8,7 +8,7 @@
 import UIKit
 protocol SearchRouterProtocol: AnyObject {
     static func searchRouterVC (view: Search)
-    func routeToAlbums(From view: SearchViewProtocol , artistId: String)
+    func routeToAlbums(From view: SearchViewProtocol , artistName: String)
 }
 class SearchRouter: SearchRouterProtocol {
     static func searchRouterVC(view: Search) {
@@ -18,8 +18,8 @@ class SearchRouter: SearchRouterProtocol {
         view.presenter = presenter
     }
     
-    func routeToAlbums(From view: SearchViewProtocol, artistId: String) {
-        let TopDetailsScreen =  AbumsRouter.AlbumsRouterVC(artistId: artistId)
+    func routeToAlbums(From view: SearchViewProtocol, artistName: String) {
+        let TopDetailsScreen =  AbumsRouter.AlbumsRouterVC(artistId: artistName)
         if let viewController = view as? UIViewController {
             DispatchQueue.main.async {
          viewController.navigationController?.pushViewController(TopDetailsScreen , animated: true)

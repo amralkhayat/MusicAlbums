@@ -9,9 +9,7 @@ import Foundation
 
 protocol MainScreenViewProtocol: AnyObject{
     func showPlacehoder(status: Bool ,message: String)
-    func show(_ Message: String)
     func reloadCollectionView()
-    
 }
 
 protocol MainScreenPresenter {
@@ -43,7 +41,7 @@ class MainScreenVCPresenter: MainScreenPresenter {
     func viewDidLoad() {
         readObjects()
     }
-    
+    // Read all data
     func readObjects() {
         interactor.readObject { [weak self] respones in
             guard let self = self else {return}
@@ -55,18 +53,20 @@ class MainScreenVCPresenter: MainScreenPresenter {
                 self.view?.reloadCollectionView()
                 
             case .failure(let error):
-                self.view?.show(error.localizedDescription)
-                self.checkDataIsEmpty()
+                print(error.localizedDescription)
                 self.albumsData.removeAll()
+                self.checkDataIsEmpty()
                 self.view?.reloadCollectionView()
             }
         }
     }
-    
+    // Check if the albumdata is empty will show placeHolder
     func checkDataIsEmpty(){
       if albumsData.isEmpty{
           self.view?.showPlacehoder(status: true, message: "Empty Albums🤭")
-         }
+      }else {
+        self.view?.showPlacehoder(status: false, message: "Empty Albums🤭")
+      }
     }
     
  //MARK:- TableView Methods
@@ -74,12 +74,12 @@ class MainScreenVCPresenter: MainScreenPresenter {
         return albumsData.count
     }
     
-    // Configuration responsable to display Album data
+    // Configuration responsable to display Local Album data
      func configurationAlbumCell (cell:LocalAlbumCellView , index: Int) {
         cell.displayCellBody(album:albumsData[index])
         
     }
-    
+    // Select item and Navigate to album details
     func didSelect(item: Int) {
         let album = albumsData[item]
         var albumConfiguration = AlbumConfiguratinModel()

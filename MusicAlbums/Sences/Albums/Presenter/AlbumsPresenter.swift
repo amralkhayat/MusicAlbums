@@ -24,7 +24,6 @@ import Foundation
     }
    protocol AlbumCellView {
     func displayCellBody(album: Album)
-    func hideDownloadedIcon(status: Bool)
    }
 
 class AlbumsVCPresenter: AlbumsPresenter {
@@ -79,7 +78,6 @@ class AlbumsVCPresenter: AlbumsPresenter {
     // Configuration responsable to display Album data
      func configurationArtistCell (cell:AlbumCellView, index: Int) {
       cell.displayCellBody(album: album[index])
-        cell.hideDownloadedIcon(status: isHiden)
         
     }
     

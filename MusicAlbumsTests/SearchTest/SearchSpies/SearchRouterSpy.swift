@@ -14,7 +14,7 @@ class SearchRouterSpy: SearchRouterProtocol {
         
     }
     
-    func routeToAlbums(From view: SearchViewProtocol, artistId: String) {
+    func routeToAlbums(From view: SearchViewProtocol, artistName: String) {
         isNavigateCalled = true
         
     }

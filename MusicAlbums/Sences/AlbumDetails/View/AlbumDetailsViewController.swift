@@ -134,9 +134,9 @@ extension AlbumDetailsViewController: AlbumDetailsViewProtocol{
     }
     
     func show(_ Message: String) {
-        self.presentAlert(withTitle: "", message: Message, actions: [:]) { _ in
-            self.navigationController?.popViewController(animated: true)
-        }
+//        self.presentAlert(withTitle: "", message: Message, actions: [:]) { _ in
+//            self.navigationController?.popViewController(animated: true)
+//        }
     }
     
     
