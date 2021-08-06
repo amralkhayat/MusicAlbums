@@ -26,3 +26,9 @@
 * Alamofire
 
 * Alamofireimage
+
+## Getting Started
+
+### Dependencies
+
+* Minimum required target IOS 11
