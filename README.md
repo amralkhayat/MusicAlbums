@@ -31,4 +31,4 @@
 
 ### Dependencies
 
-* Minimum required target IOS 11
+* Minimum required target IOS 13
