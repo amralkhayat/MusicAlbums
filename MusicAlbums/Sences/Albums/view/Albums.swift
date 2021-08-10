@@ -47,10 +47,10 @@ class Albums: UIViewController {
         navigationItem.title = "Albums"
         presenter?.viewDidLoad()
     }
-    //MARK:- Selector
+
 
 }
-
+//MARK:- TableView Methods 
 extension Albums: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.didSelect(item: indexPath.item)
@@ -68,5 +68,11 @@ extension Albums: UICollectionViewDataSource{
         return albumCell
     }
     
+}
+
+extension Albums: UICollectionViewDataSourcePrefetching{
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        presenter?.prefetchRowsAt(indexPath: indexPaths)
+    }
     
 }

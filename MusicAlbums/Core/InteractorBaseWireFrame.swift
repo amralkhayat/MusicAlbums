@@ -8,4 +8,5 @@
 import RealmSwift
 class InteractorBaseWireFrame {
     let realm =  RealmManager()
+    let  apiManager = APIManager()
 }

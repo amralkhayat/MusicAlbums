@@ -9,16 +9,13 @@ import Foundation
 @testable import MusicAlbums
 
 class AlbumsDetailsViewSpy: AlbumDetailsViewProtocol {
-    func showAlbumImage(url: String) {
-        
-    }
-    
-   
-    
+ 
     var isShowIndicator = false
     var isHideIndicator = false
     var isTableViewCalled = false
     var message = ""
+    var deleteMessage = ""
+    var albumImageUrl = ""
     func showIndecator() {
        isShowIndicator = true
     }
@@ -35,4 +32,13 @@ class AlbumsDetailsViewSpy: AlbumDetailsViewProtocol {
         isTableViewCalled = true
     }
     
+    func showAlbumImage(url: String) {
+        albumImageUrl = url
+    }
+    
+    func deleteObject(_ Message: String) {
+        deleteMessage = Message
+    
+}
+
 }

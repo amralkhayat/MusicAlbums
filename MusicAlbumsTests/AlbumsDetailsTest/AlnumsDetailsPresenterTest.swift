@@ -83,7 +83,7 @@ class AlnumsDetailsPresenterTest: XCTestCase {
          // Then
         XCTAssertEqual(view.isShowIndicator, expected)
         XCTAssertEqual(view.isHideIndicator, expected)
-        XCTAssertEqual(view.message, message)
+        XCTAssertEqual(view.deleteMessage, message)
     }
 
     func test_AlbumDetailsPresnter_WhenDeleteObject_ShouldNot_DeleteFromLoaclStorage_showMessageSucces_HideIndicator(){
@@ -150,6 +150,7 @@ class AlnumsDetailsPresenterTest: XCTestCase {
  //
  //     // Given
          let expected =  true
+        let expectedImageUrl = "shttps://lastfm.freetls.fastly.net/i/u/34s/57f8e28f8b184651c6f2ed323c13f858.jpg"
         let albumInfo =  AlbumInfo.createAlbumInfo()
          interactor.resultToBeReturnedRemote = .success(albumInfo)
 
@@ -159,6 +160,7 @@ class AlnumsDetailsPresenterTest: XCTestCase {
          // Then
          XCTAssertEqual(expected,view.isTableViewCalled)
          XCTAssertEqual(expected, view.isHideIndicator)
+        XCTAssertEqual(expectedImageUrl , view.albumImageUrl)
 
      }
 
@@ -204,7 +206,7 @@ class AlnumsDetailsPresenterTest: XCTestCase {
     func test_AlbumsInfoPresnter_populateAlbumInfo_WhenThereIsNOPrimaryKey_LoadDataServer_showIndicatorOfRequest(){
         // Given
          let expected = true
-        let albumInfo =  AlbumInfo.createAlbumInfo()
+         let albumInfo =  AlbumInfo.createAlbumInfo()
            // When
           interactor.isalbumExist = false
           interactor.resultToBeReturnedRemote = .success(albumInfo)
@@ -214,6 +216,48 @@ class AlnumsDetailsPresenterTest: XCTestCase {
         XCTAssertEqual(view.isShowIndicator, expected)
 
     }
+    //MARK:- Table view methods test
+     func test_AlbumsInfoPresnter_WhenPopulateAlbumInfo_Succses_NumberoTracks(){
+         // Given
+          let expectedTracks = 1
+          let albumInfo =  AlbumInfo.createAlbumInfo()
+        interactor.resultToBeReturnedRemote = .success(albumInfo)
+         //When
+        sut.populateAlbumInfo()
+         // Then
+         XCTAssertEqual(expectedTracks, sut.numberTracks, "Number of Albums mismatch")
+
+     }
+    func test_AlbumsInfoPresnter_WhenPopulateAlbumInfo_Succses_ShowTrackView(){
+         // Given
+         let tarckCellSpy = TracksCellSpy()
+          sut.albumInfo =  AlbumInfo.createAlbumDetails()
+         let expectTrackName = "Imagine"
+          //When
+        sut.configurationTracksCellViewCell(cell: tarckCellSpy, index: 0)
+         //Then
+        XCTAssertEqual( expectTrackName , tarckCellSpy.trackName, "Name track mismatch")
+
+     }
+    func test_AlbumsInfoPresnter_WhenPopulateAlbumInfo_Succses_ShowHeaderView(){
+         // Given
+         let headrCellSpy = HeaderCellSpy()
+          sut.albumInfo =  AlbumInfo.createAlbumDetails()
+          let expectedAlbumName = "Imagine"
+          let expectedPlayAccount = "2797470"
+          let expectedArtistName = "Armin van Buuren"
+          let expectedImageUrl = "shttps://lastfm.freetls.fastly.net/i/u/34s/57f8e28f8b184651c6f2ed323c13f858.jpg"
+          let expected =  true
+          //When
+        sut.configurationHeaderCell(cell: headrCellSpy)
+         //Then
+        XCTAssertEqual( expectedAlbumName , headrCellSpy.albumName, "Album Name mismatch")
+        XCTAssertEqual( expectedPlayAccount , headrCellSpy.playAccount, "Play Account mismatch")
+        XCTAssertEqual( expectedArtistName ,  headrCellSpy.artistName, "Artist Name mismatch")
+        XCTAssertEqual( expectedImageUrl ,  headrCellSpy.albumImageUrl, "Artist Name mismatch")
+        XCTAssertEqual( expected ,  headrCellSpy.imageIsdownloaded, "Artist Name mismatch")
+     }
+
 
 
 }

@@ -10,7 +10,6 @@ import UIKit
 class AlbumDetailsViewController: UIViewController {
 
     //MARK:- IBOUTLETS
-
     @IBOutlet weak var albumDetailsTableView: UITableView!{
         didSet{
             albumDetailsTableView.delegate = self
@@ -24,37 +23,19 @@ class AlbumDetailsViewController: UIViewController {
     }
     //MARK:- Properties
     var presenter:AlbumDetailsVcPresnter?
-    var albumImageUrl = ""
     var headerView: StretchyHeaderView?
     //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configurationUI()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
 
-        // Make the navigation bar background clear
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        // Restore the navigation bar to default
-        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        navigationController?.navigationBar.shadowImage = nil
-    }
     //MARK:- Helper
     private func configurationUI(){
-        presenter?.viewdidLoad()
+          presenter?.viewdidLoad()
          headerView = StretchyHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 300))
         self.albumDetailsTableView.tableHeaderView = headerView
         navigationItem.largeTitleDisplayMode = .never
-        
-    
     }
 
 }
@@ -70,17 +51,16 @@ class AlbumDetailsViewController: UIViewController {
             }else{
                 headerCell.saveAndDeleteButton.setImage(#imageLiteral(resourceName: "undownload"), for: .normal)
             }
-            
         }
-      
         return headerCell
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 140
-    }
+       }
 
    }
+
 //MARK:- TableView DataSource Methods
   extension AlbumDetailsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,11 +70,9 @@ class AlbumDetailsViewController: UIViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let trackCell = tableView.dequeue() as TrackCell
         presenter?.configurationTracksCellViewCell(cell: trackCell, index: indexPath.row)
-    return trackCell
-}
-  }
-
-
+           return trackCell
+        }
+    }
 
 extension AlbumDetailsViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -104,40 +82,3 @@ extension AlbumDetailsViewController: UIScrollViewDelegate {
 }
 
 
-extension AlbumDetailsViewController: AlbumDetailsViewProtocol{
-    func showAlbumImage(url: String) {
-        DispatchQueue.main.async {
-            self.headerView?.imageView.loadImage(url)
-         }
-
-    }
-    
-    func reloadTableView() {
-        DispatchQueue.main.async {
-            self.albumDetailsTableView.reloadData()
-        }
-    
-    }
-    
-    func showIndecator() {
-        DispatchQueue.main.async { [weak self ] in
-            guard let self = self else {return}
-            self.showSpinner(onView: self.view)
-        }
-    }
-    
-    func hideIndecator() {
-        DispatchQueue.main.async { [weak self ] in
-            guard let self = self else {return}
-            self.removeSpinner()
-        }
-    }
-    
-    func show(_ Message: String) {
-//        self.presentAlert(withTitle: "", message: Message, actions: [:]) { _ in
-//            self.navigationController?.popViewController(animated: true)
-//        }
-    }
-    
-    
-}

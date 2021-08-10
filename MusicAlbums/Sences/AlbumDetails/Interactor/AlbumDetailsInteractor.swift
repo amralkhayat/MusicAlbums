@@ -12,6 +12,7 @@ protocol AlbumDetailsInteractorProtocol {
     func saveObject(album:AlbumData,  responseHandler: @escaping CallResponse<String>)
     func deleteObject(album: AlbumData, responseHandler: @escaping CallResponse<String>)
     func readObject(primaryKey: String, responseHandler: @escaping CallResponse<AlbumData>)
+    
     typealias CallResponseRemote<T> = ((Result<T?, BaseError>) -> Void)
     func getAlbumInfo(artistName:String,albumName:String,responseHandler: @escaping CallResponseRemote<AlbumInfo>)
     func AlbumExists(primaryKey: String) -> Bool

@@ -28,7 +28,6 @@ class MockURLProtocol: URLProtocol{
             assertionFailure("Received unexpected request with no handler set")
             return}
             let (response, data,error) =  handler(request)
-        print(response.statusCode)
         if let data = data {
             client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
             client?.urlProtocol(self, didLoad: data)

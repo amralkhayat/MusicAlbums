@@ -85,7 +85,7 @@ class AlbumsPresenterTest: XCTestCase {
 
     }
     
-    func test_AlbumPresnter_WhenViewDidLoad_Succses_has_release_data(){
+    func test_AlbumPresnter_WhenViewDidLoad_Succses_ShowAlbumView(){
        // Given
         let albumCellSpy = AlbumsCellSpy()
         sut.album = AlbumModel.createAlbum().topalbums.album

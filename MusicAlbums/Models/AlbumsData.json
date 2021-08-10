@@ -1,0 +1,662 @@
+
+{
+    "topalbums": {
+        "album": [
+            {
+                "name": "The Sound of Wonder!",
+                "playcount": 2003,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+of+Wonder%21",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/3dbfa5c5c506430dbf6c015cd9503cb0.png",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/3dbfa5c5c506430dbf6c015cd9503cb0.png",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/3dbfa5c5c506430dbf6c015cd9503cb0.png",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/3dbfa5c5c506430dbf6c015cd9503cb0.png",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound Of Wonder! Rare Electronic Pop From The Lollywood Vaults 1973-1980",
+                "playcount": 965,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+Of+Wonder%21+Rare+Electronic+Pop+From+The+Lollywood+Vaults+1973-1980",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "(null)",
+                "playcount": 28,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/(null)",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound of Wonder! Rare Electronic Pop from the Lollywood vaults (1973-1980)",
+                "playcount": 55,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+of+Wonder%21+Rare+Electronic+Pop+from+the+Lollywood+vaults+(1973-1980)",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound Of Wonder! - The First Wave Of Plugged In Pop At The Pakistani Picture House",
+                "playcount": 53,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+Of+Wonder%21+-+The+First+Wave+Of+Plugged+In+Pop+At+The+Pakistani+Picture+House",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound of wonder",
+                "playcount": 113,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+of+wonder",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound of Wonder! The First Wave of Plugged-in Pop at the Pakistani Picture House",
+                "playcount": 56,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+of+Wonder%21+The+First+Wave+of+Plugged-in+Pop+at+the+Pakistani+Picture+House",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound Of Wonder! Rare Elec",
+                "playcount": 10,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+Of+Wonder%21+Rare+Elec",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound Of Wonder! (2009, Finders Keepers)",
+                "playcount": 26,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+Of+Wonder%21+(2009,+Finders+Keepers)",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "Felmusik.se",
+                "playcount": 9,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/Felmusik.se",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound of Wonder! - The First Wave Of Plugged-In Pop At The Pakistani Picture House",
+                "playcount": 7,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+of+Wonder%21+-+The+First+Wave+Of+Plugged-In+Pop+At+The+Pakistani+Picture+House",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "Life Is Dance: Plugged-in Sounds Of Wonder At The Pakistani Picture House",
+                "playcount": 5,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/Life+Is+Dance:+Plugged-in+Sounds+Of+Wonder+At+The+Pakistani+Picture+House",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound of Wonder (12-198.118-01)",
+                "playcount": 24,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+of+Wonder+(12-198.118-01)",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "\"The Sound of Wonder!\"",
+                "playcount": 12,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/%22The+Sound+of+Wonder%21%22",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound of Wonder!: Rare Electronic Pop from the Lollywood Vaults 1973-1980",
+                "playcount": 7,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+of+Wonder%21:+Rare+Electronic+Pop+from+the+Lollywood+Vaults+1973-1980",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Pakistani Picture House - The Sound of Wonder!",
+                "playcount": 4,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Pakistani+Picture+House+-+The+Sound+of+Wonder%21",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "va - the sound of wonder!",
+                "playcount": 4,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/va+-+the+sound+of+wonder%21",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "Sounds of Wonder",
+                "playcount": 3,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/Sounds+of+Wonder",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "\"Life Is Dance\" Plugged-in Sounds Of Wonder at the Pakistani picture house.",
+                "playcount": 3,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/%22Life+Is+Dance%22+Plugged-in+Sounds+Of+Wonder+at+the+Pakistani+picture+house.",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "The Sound of Wonder: Rare Electronic Pop From The Lollywood Vaults 1973-1980",
+                "playcount": 4,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/The+Sound+of+Wonder:+Rare+Electronic+Pop+From+The+Lollywood+Vaults+1973-1980",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "EXP ETC Setlist",
+                "playcount": 3,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/EXP+ETC+Setlist",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "VA C SOUNDS",
+                "playcount": 2,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/VA+C+SOUNDS",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "Sound Of Wonder",
+                "playcount": 1,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/Sound+Of+Wonder",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            },
+            {
+                "name": "\"The Sound of Wonder!\" The first wave of plugged-in pop at the Pakistani picture house.",
+                "playcount": 1,
+                "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan/%22The+Sound+of+Wonder%21%22+The+first+wave+of+plugged-in+pop+at+the+Pakistani+picture+house.",
+                "artist": {
+                    "name": "Kamal Ahmed feat Noor Jehan",
+                    "url": "https://www.last.fm/music/Kamal+Ahmed+feat+Noor+Jehan"
+                },
+                "image": [
+                    {
+                        "#text": "",
+                        "size": "small"
+                    },
+                    {
+                        "#text": "",
+                        "size": "medium"
+                    },
+                    {
+                        "#text": "",
+                        "size": "large"
+                    },
+                    {
+                        "#text": "",
+                        "size": "extralarge"
+                    }
+                ]
+            }
+        ],
+        "@attr": {
+            "artist": "Kamal Ahmed feat Noor Jehan",
+            "page": "1",
+            "perPage": "50",
+            "totalPages": "1",
+            "total": "24"
+        }
+    }
+}

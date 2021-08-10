@@ -10,10 +10,7 @@ import UIKit
 
 class AlbumsDetailsRouterrSpy: AlbumDetailsRouterProtocol {
     
-    
     static func AlbumsDetailsRouterVC(albumConfiguration: AlbumConfiguratinModel) -> UIViewController {
-        
-        
         return UIViewController()
     }
     

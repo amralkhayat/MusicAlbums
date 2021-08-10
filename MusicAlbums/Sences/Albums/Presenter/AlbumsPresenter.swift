@@ -48,7 +48,8 @@ class AlbumsVCPresenter: AlbumsPresenter {
       populateAlbums()
     }
     
-    // populate All Albums
+    
+   // MARK:- populate All Albums
     func populateAlbums() {
         view?.showIndecator()
         interactor.getSearchedArtist(artistId: artistId, page: currentPage) { [weak self] respones in
@@ -67,8 +68,20 @@ class AlbumsVCPresenter: AlbumsPresenter {
     func dataHandling(data: AlbumModel) {
         self.view?.hideIndecator()
         self.album = data.topalbums.album
+        currentPage += 1
         self.view?.collectionViewReload()
     }
+    
+    //MARK:- Prefetch data
+    func prefetchRowsAt(indexPath: [IndexPath]){
+      for index in indexPath{
+        if index.row >= album.count - 3{
+            populateAlbums()
+            self.view?.collectionViewReload()
+        }
+          break
+        }
+      }
     
     //MARK:-  TableView Methods
     var numberOfrow: Int {

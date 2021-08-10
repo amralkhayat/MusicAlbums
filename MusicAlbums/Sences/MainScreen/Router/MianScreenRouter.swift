@@ -19,7 +19,7 @@ class MainScreenRouter: MainScreenRouterProtocol {
         let presenter =  MainScreenVCPresenter(view: view, interactor: interactor, router: router)
         view.presenter = presenter
     }
-    //MARK:- Navgate to the Album details and pass albumConfiguration
+    //MARK:- Navigate to the Album details and pass albumConfiguration
     func routeToAlbumsDetails(From view: MainScreenViewProtocol, albumConfiguration: AlbumConfiguratinModel) {
         let ToAlbumDetailsScreen =  AlbumDetailsRouter.AlbumsDetailsRouterVC(albumConfiguration: albumConfiguration)
         if let viewController = view as? UIViewController {

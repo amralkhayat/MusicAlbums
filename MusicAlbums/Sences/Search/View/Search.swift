@@ -12,7 +12,7 @@ class Search: UIViewController {
     //MARK:- IBOUTLETS
     @IBOutlet weak var searchTableView: UITableView! {
         didSet{
-            searchTableView.rowHeight =  70
+//            searchTableView.rowHeight =  70
             searchTableView.tableFooterView =  UIView()
             searchTableView.registerCellNib(cellClass: ArtistCell.self)
             searchTableView.dataSource = self

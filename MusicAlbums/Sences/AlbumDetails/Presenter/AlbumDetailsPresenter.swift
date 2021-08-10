@@ -11,6 +11,7 @@ protocol AlbumDetailsViewProtocol: AnyObject{
     func showIndecator ()
     func hideIndecator ()
     func show(_ Message: String)
+    func deleteObject(_ Message: String)
     func reloadTableView()
     func showAlbumImage(url: String)
 }
@@ -39,9 +40,6 @@ protocol TracksCellView {
 
 
 class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
- 
-    
-
     //MARK:- Properties
     weak var view: AlbumDetailsViewProtocol?
     var interactor: AlbumDetailsInteractorProtocol
@@ -72,7 +70,7 @@ class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
             isDownloaded = false
         }
     }
-    
+   //MARK:- Realm CURD Methods
     // save album to the local data storage
     func writeObject(album:AlbumData){
         self.view?.showIndecator()
@@ -99,7 +97,7 @@ class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
                 switch respones {
                 case .success(let message):
                     guard let message = message else {return}
-                    self.view?.show(message)
+                    self.view?.deleteObject(message)
                     self.view?.hideIndecator()
                     self.isDownloaded = false
                 case .failure(let error):
@@ -124,7 +122,23 @@ class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
              }
         }
     }
-    // populate Album Info from request API
+    
+
+    func downloadAndDelete() -> Bool {
+        guard let object =  albumInfo else { return false}
+        if isDownloaded{
+            deleteObject(album: object)
+            isDownloaded = false
+            return isDownloaded
+        }else{
+            print(albumInfo ?? AlbumInfo())
+            writeObject(album:object)
+            isDownloaded = true
+            return isDownloaded
+        }
+    }
+    
+    //MARK:-  populate Album Info from request API
     func populateAlbumInfoFromApiRequest() {
         self.view?.showIndecator()
         interactor.getAlbumInfo(artistName: albumConfiguration.artistName , albumName: albumConfiguration.albumName) { [weak self ] respones in
@@ -141,22 +155,7 @@ class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
             }
         }
     }
-    
-    func downloadAndDelete() -> Bool {
-        guard let object =  albumInfo else { return false}
-        if isDownloaded{
-            deleteObject(album: object)
-            isDownloaded = false
-            return isDownloaded
-        }else{
-            print(albumInfo ?? AlbumInfo())
-            writeObject(album:object)
-            isDownloaded = true
-            return isDownloaded
-        }
-    }
-    
-    
+    //MARK:- TableView Methods
     var numberTracks: Int {
         return albumInfo?.tracks?.track.count ?? 0
     }

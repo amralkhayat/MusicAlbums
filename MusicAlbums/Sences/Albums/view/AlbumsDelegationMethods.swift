@@ -14,7 +14,6 @@ extension Albums: AlbumsViewProtocol  {
             self.showSpinner(onView: self.view)
         }
     }
-    
     func hideIndecator() {
         DispatchQueue.main.async { [weak self ] in
             guard let self = self else {return}

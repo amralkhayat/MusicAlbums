@@ -10,21 +10,18 @@ import XCTest
 class AlbumInfoModelTest: XCTestCase {
     
     var sut:AlbumInfo?
+    
     func test_AlbumInfoModels_ShouldDecodeModel(){
-    
-      // Given
-    guard let path =  Bundle.main.path(forResource: "data", ofType: "json")
-    else {fatalError("Can't find search.json file")}
-    
-   let url = URL(fileURLWithPath: path)
-  //When
-  do {
-    let jsonData = try Data(contentsOf: url)
-    sut =  try JSONDecoder().decode(AlbumInfo.self,from:jsonData)
-     } catch{
-         print("error")
-    }
-        
+        decodingData(object: AlbumInfo.self, fileResourece: "AlbumDetailsData") { respones in
+            //When
+            switch respones{
+            case .success(let data):
+                self.sut =  data
+            case .failure(_):
+                break
+            }
+        }
+        // Then
         XCTAssertEqual(sut?.album?.name, "Imagine")
     }
 }

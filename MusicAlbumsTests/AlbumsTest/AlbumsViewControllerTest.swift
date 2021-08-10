@@ -47,7 +47,9 @@ class AlbumsViewControllerTest: XCTestCase {
     func test_Albums_ShouldToConformsToCollectionViewDelegate(){
         XCTAssert(sut.conforms(to: UICollectionViewDelegate.self))
         XCTAssertTrue(sut.responds(to: #selector(sut.collectionView(_:didSelectItemAt:))))
-      
+        
+     
+        XCTAssertTrue(sut.responds(to: #selector(sut.collectionView(_:prefetchItemsAt:))))
     }
     
     

@@ -12,8 +12,7 @@ protocol AlbumsRouterProtocol {
 }
 
 class AbumsRouter: AlbumsRouterProtocol {
-    
-    
+    // Init View of the Albums
     static func AlbumsRouterVC(artistId: String) -> UIViewController {
         let view = Albums()
         let interactor = AlbumsInteractor()
@@ -23,7 +22,7 @@ class AbumsRouter: AlbumsRouterProtocol {
         return view
     }
     
-    
+    //MARK:- Navigate the Album details and pass albumConfiguration
     func routeToAlbumsDetails(From view:  AlbumsViewProtocol, albumConfiguration: AlbumConfiguratinModel) {
         let ToAlbumDetailsScreen =  AlbumDetailsRouter.AlbumsDetailsRouterVC(albumConfiguration: albumConfiguration)
         if let viewController = view as? UIViewController {

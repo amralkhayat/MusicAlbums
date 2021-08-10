@@ -8,9 +8,6 @@
 import Foundation
 import RealmSwift
 
-
-
-
 @objcMembers class AlbumInfo:Object , Codable {
     dynamic var album:AlbumData?
     dynamic var id = ""
@@ -61,7 +58,7 @@ import RealmSwift
         self.artist = try container.decode(String.self, forKey: .artist)
         self.playcount = try container.decode(String.self, forKey: .playcount)
         self.listeners = try container.decode(String.self, forKey: .listeners)
-        self.tracks = try container.decode(Tracks.self, forKey: .tracks)
+        self.tracks = try? container.decode(Tracks.self, forKey: .tracks)
         let image = try container.decodeIfPresent([AlbumImage].self, forKey: .image) ?? [AlbumImage()]
         self.image.append(objectsIn: image)
         self.name = try container.decode(String.self, forKey: .name)

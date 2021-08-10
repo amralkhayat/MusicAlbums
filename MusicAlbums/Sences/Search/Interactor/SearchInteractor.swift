@@ -10,8 +10,7 @@ protocol SearchInteractorProtocol {
     typealias CallResponse<T> = ((Result<T?, BaseError>) -> Void)
     func getSearchedArtist(artistName:String,page:Int,responseHandler: @escaping CallResponse<ArtistModel>)
 }
-class SearchInteractor: SearchInteractorProtocol{
-    let  apiManager = APIManager()
+class SearchInteractor: InteractorBaseWireFrame,SearchInteractorProtocol{
     func getSearchedArtist(artistName:String,page:Int,responseHandler: @escaping CallResponse<ArtistModel>) {
         apiManager.performRequest(ArtistModel.self, router: ArtistRequest.getArtistSearched(artistName, page)) { result  in
             

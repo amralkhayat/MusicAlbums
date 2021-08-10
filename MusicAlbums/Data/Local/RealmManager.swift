@@ -7,14 +7,18 @@
 
 import RealmSwift
 import Foundation
-import os.log
 protocol RealmManagerMethods {
     typealias CallResponse<T> = ((Result<T?, RuntimeError>) -> Void)
+    
     func create<T:Object> (_ objects: T,responseHandler: @escaping CallResponse<String>)
+    
     func read<R:Object,T>  (_ object: R.Type ,primaryKey:T) -> R?
-    func delete <D:Object>( _ object:D,responseHandler: @escaping CallResponse<String>)
-    func objectExists<E:Object,T>(_ object:E.Type,primaryKey:T) -> Bool
     func readObjects<R:Object>  (_ object: R.Type) -> [R]
+    
+    func delete <D:Object>( _ object:D,responseHandler: @escaping CallResponse<String>)
+    
+    func objectExists<E:Object,T>(_ object:E.Type,primaryKey:T) -> Bool
+    
 }
 
 
@@ -31,7 +35,7 @@ class RealmManager: RealmManagerMethods {
     
     
     // Create Relam file, and saved it in  document directory
-     private func realmConfigurations(){
+     func realmConfigurations(){
          do {
            let realm =  try Realm()
              self.realm =  realm
@@ -54,8 +58,6 @@ class RealmManager: RealmManagerMethods {
             responseHandler(.failure(RuntimeError.NoRealmSet(error.localizedDescription)))
         }
     }
-    
-
     
     
     func read<R, T>(_ object: R.Type, primaryKey: T) -> R? where R : Object {
@@ -92,16 +94,13 @@ class RealmManager: RealmManagerMethods {
 enum RuntimeError: Error
 {
     case NoRealmSet(_ message: String)
-    case saveError
-    
     var localizedDescription: String {
         switch self {
         case .NoRealmSet(let message ):
             return message
-        case .saveError:
-            return ""
-        }
         
+        }
+
     }
   
 }

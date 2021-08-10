@@ -11,10 +11,7 @@ protocol AlbumsInteractorProtocol {
     func getSearchedArtist(artistId:String,page:Int,responseHandler: @escaping CallResponse<AlbumModel>)
 }
 
-
-class AlbumsInteractor: AlbumsInteractorProtocol{
-    let  apiManager = APIManager()
-    let realm =  RealmManager()
+class AlbumsInteractor:InteractorBaseWireFrame, AlbumsInteractorProtocol{
     func getSearchedArtist(artistId: String, page: Int, responseHandler: @escaping CallResponse<AlbumModel>) {
         apiManager.performRequest(AlbumModel.self, router: ArtistRequest.getAlbums(artistId, page)) { result   in
             switch result {
