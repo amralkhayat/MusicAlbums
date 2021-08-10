@@ -1,4 +1,10 @@
 # MusicAlbums
+Searching For music albums information by Artist Name. You can save favourites albums 
+
+## Screenshots
+
+![Screenshot ](https://user-images.githubusercontent.com/33759960/128855731-395b271d-d2ce-4ff6-8935-10e8fc39a684.png)
+
 
 ## Implemented Using
 
@@ -11,6 +17,9 @@
 * Clean Code
 
 * Unit Testing
+
+* Realm
+
 
 ## MVP Concepts
 
