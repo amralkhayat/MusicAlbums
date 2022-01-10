@@ -47,6 +47,7 @@ class AlbumDetailsVcPresnter: AlbumDetailsPresnter{
     var albumInfo:AlbumData?
     var albumConfiguration: AlbumConfiguratinModel
     var isDownloaded = false
+    
     init( view: AlbumDetailsViewProtocol,interactor: AlbumDetailsInteractorProtocol,router: AlbumDetailsRouterProtocol, albumConfiguration: AlbumConfiguratinModel) {
         self.view =  view
         self.interactor = interactor

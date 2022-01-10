@@ -8,16 +8,19 @@
 import RealmSwift
 import Foundation
 protocol RealmManagerMethods {
+    
     typealias CallResponse<T> = ((Result<T?, RuntimeError>) -> Void)
     
     func create<T:Object> (_ objects: T,responseHandler: @escaping CallResponse<String>)
     
     func read<R:Object,T>  (_ object: R.Type ,primaryKey:T) -> R?
+    
     func readObjects<R:Object>  (_ object: R.Type) -> [R]
     
     func delete <D:Object>( _ object:D,responseHandler: @escaping CallResponse<String>)
     
     func objectExists<E:Object,T>(_ object:E.Type,primaryKey:T) -> Bool
+    
     
 }
 
@@ -29,6 +32,7 @@ class RealmManager: RealmManagerMethods {
         self.realm = realm
     }
     
+    
     init() {
         realmConfigurations()
     }
@@ -36,12 +40,17 @@ class RealmManager: RealmManagerMethods {
     
     // Create Relam file, and saved it in  document directory
      func realmConfigurations(){
+        
          do {
+            
            let realm =  try Realm()
+            
              self.realm =  realm
+            
          } catch{
-          
+            
              print(error.localizedDescription)
+            
              print("Unable to create an instance ")
          }
      }
@@ -49,12 +58,18 @@ class RealmManager: RealmManagerMethods {
 
     //Write  a list objects to the Realm
     func create<T:Object> (_ objects: T, responseHandler: @escaping CallResponse<String>){
+        
         do {
+            
             try realm?.write{
+                
                 realm?.add(objects, update: .modified)
+                
                 responseHandler(.success("Data successfully saved"))
             }
-        }catch let error as NSError {
+            
+           } catch let error as NSError {
+            
             responseHandler(.failure(RuntimeError.NoRealmSet(error.localizedDescription)))
         }
     }
@@ -66,7 +81,9 @@ class RealmManager: RealmManagerMethods {
     }
 
     func readObjects<R>(_ object: R.Type) -> [R] where R : Object {
+        
         let result = realm.objects(object)
+        
         return Array(result)
     }
     

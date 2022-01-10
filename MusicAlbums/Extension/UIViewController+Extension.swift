@@ -37,6 +37,7 @@ extension UIViewController {
       onView.addSubview(spinnerView)
         vSpinner = spinnerView
    }
+    
 // Remove spinner from View
        func removeSpinner() {
            DispatchQueue.main.async {

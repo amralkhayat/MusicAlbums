@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 protocol AlbumDetailsInteractorProtocol {
     typealias CallResponse<T> = ((Result<T?, RuntimeError>) -> Void)
+    
     func saveObject(album:AlbumData,  responseHandler: @escaping CallResponse<String>)
     func deleteObject(album: AlbumData, responseHandler: @escaping CallResponse<String>)
     func readObject(primaryKey: String, responseHandler: @escaping CallResponse<AlbumData>)

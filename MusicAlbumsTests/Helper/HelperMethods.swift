@@ -18,7 +18,7 @@ func decodingData<T>(object: T.Type,fileResourece: String, responseHandler:@esca
     let jsonData = try Data(contentsOf: url)
     let data = try JSONDecoder().decode(T.self,from:jsonData)
         responseHandler(.success(data))
-     } catch let error {
+     } catch let error  {
         responseHandler(.failure(BaseError.unknownError(text: error.localizedDescription)))
     }
 }
